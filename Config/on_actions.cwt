@@ -552,6 +552,8 @@ on_actions = {
 	## event_type = scopeless
 	on_mio_industrial_manufacturer_unassigned
 
+	# GTD --------------------
+
 	### Triggered when a project is completed
 	### ROOT is the owner of the special project, FROM is the special project
 	## replace_scope = { root = country this = country from = special_project }
@@ -562,4 +564,18 @@ on_actions = {
 	## replace_scope = { root = country this = country from = country }
 	## event_type = country
 	on_before_peace_conference_start
+
+	# ------------ International Market on actions ------------
+
+	## replace_scope = { root = contract this = contract }
+	## event_type = contract
+	on_contract_started = single_alias_right[on_action_effect]
+
+	## replace_scope = { root = contract this = contract }
+	## event_type = contract
+	on_contract_finished
+
+	## replace_scope = { root = contract this = contract }
+	## event_type = contract
+	on_contract_cancelled
 }
