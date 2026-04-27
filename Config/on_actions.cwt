@@ -556,26 +556,26 @@ on_actions = {
 
 	### Triggered when a project is completed
 	### ROOT is the owner of the special project, FROM is the special project
-	## replace_scope = { root = country this = country from = special_project }
+	## replace_scope = { this = country root = country from = special_project }
 	## event_type = country
 	on_project_completion
 
 	### ROOT is winner, FROM is loser (called for all winners against all losers)
-	## replace_scope = { root = country this = country from = country }
+	## replace_scope = { this = country root = country from = country }
 	## event_type = country
 	on_before_peace_conference_start
 
 	# ------------ International Market on actions ------------
 
-	## replace_scope = { root = contract this = contract }
-	## event_type = contract
-	on_contract_started = single_alias_right[on_action_effect]
+	## replace_scope = { this = contract root = contract }
+	## event_type = scopeless
+	on_contract_started
 
-	## replace_scope = { root = contract this = contract }
-	## event_type = contract
+	## replace_scope = { this = contract root = contract }
+	## event_type = scopeless
 	on_contract_finished
 
-	## replace_scope = { root = contract this = contract }
-	## event_type = contract
+	## replace_scope = { this = contract root = contract }
+	## event_type = scopeless
 	on_contract_cancelled
 }
