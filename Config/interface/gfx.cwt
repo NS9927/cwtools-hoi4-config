@@ -114,17 +114,17 @@ sprite = {
 	## cardinality = 0..1
 	generate_mip_maps = bool
 	subtype[normal] = {
-		## file_extensions = { .png .dds .tga }
+		## file_extensions = { png dds tga }
 		textureFile = filepath
 		clicksound = <soundeffect>
 		clicksound = click
 	}
 	subtype[frame_animated_sprite] = {
-		## file_extensions = { .png .dds .tga }
+		## file_extensions = { png dds tga }
 		textureFile = filepath
 	}
 	subtype[cornered_tile_sprite] = {
-		## file_extensions = { .png .dds .tga }
+		## file_extensions = { png dds tga }
 		textureFile = filepath
 		borderSize = single_alias_right[gui_size_coordinates]
 		## cardinality = 0..1
@@ -140,7 +140,7 @@ sprite = {
 		textureFile2 = scalar
 	}
 	subtype[text_sprite] = {
-		## file_extensions = { .png .dds .tga }
+		## file_extensions = { png dds tga }
 		textureFile = filepath
 		## cardinality = 0..1
 		clicksound = <soundeffect>
