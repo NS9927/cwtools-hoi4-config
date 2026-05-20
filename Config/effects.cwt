@@ -142,7 +142,6 @@ alias[effect:set_country_flag] = value_set[country_flag]
 ## scope = country
 alias[effect:set_country_flag] = {
 	flag = value_set[country_flag]
-	## cardinality = 0..1
 	value = int
 	## cardinality = 0..1
 	days = int
@@ -160,7 +159,6 @@ alias[effect:set_global_flag] = value_set[global_flag]
 ## scope = any
 alias[effect:set_global_flag] = {
 	flag = value_set[global_flag]
-	## cardinality = 0..1
 	value = int
 	## cardinality = 0..1
 	days = int
@@ -804,7 +802,6 @@ alias[effect:set_state_flag] = value_set[state_flag]
 ## scope = state
 alias[effect:set_state_flag] = {
 	flag = value_set[state_flag]
-	## cardinality = 0..1
 	value = int
 	## cardinality = 0..1
 	days = int
@@ -2275,7 +2272,6 @@ alias[effect:set_unit_leader_flag] = value_set[leader_flag]
 ## scope = { unit_leader character operative }
 alias[effect:set_unit_leader_flag] = {
 	flag = value_set[leader_flag]
-	## cardinality = 0..1
 	value = int
 	## cardinality = 0..1
 	days = int
@@ -2928,6 +2924,9 @@ alias[effect:resize_array] = {
 	## cardinality = 0..1
 	### Optional, if not specified and array grows the new elements are set to this (default 0).
 	value = variable_field
+	## cardinality = 0..1
+	### Optional, if not specified and array grows the new elements are set to this (default 0).
+	value = value[constant]
 	### If higher than old size, new elements are added to end. Otherwise last elements are removed to match to new size.
     size = int_variable_field_32
 }
@@ -2942,6 +2941,9 @@ alias[effect:resize_array] = {
 	## cardinality = 0..1
 	### Optional, if not specified and array grows the new elements are set to this (default 0).
 	value = variable_field
+	## cardinality = 0..1
+	### Optional, if not specified and array grows the new elements are set to this (default 0).
+	value = value[constant]
 }
 
 ### Adds an element to a temporary array.
@@ -3352,6 +3354,7 @@ alias[effect:add_ai_strategy] = {
 alias[effect:add_ai_strategy] = {
 	type = enum[pp_strats]
 	id = enum[pp_targets]
+	id = value[character_advisor_slot]
 	value = int
 }
 

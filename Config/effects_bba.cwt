@@ -51,6 +51,11 @@ alias[effect:set_power_balance_gfx] = {
 	id = <balance_of_power>
 	side = value[bop_side]
 	gfx = <sprite>
+	# Bugged vanilla gfx definition, do not remove
+	gfx = GFX_bop_ITA_mussolini_improved_side
+	gfx = GFX_bop_ITA_mussolini_side
+	gfx = GFX_bop_ITA_democratic_side
+	gfx = GFX_bop_ITA_democratic_improved_side
 }
 
 ### Add modifier to Balance of Power
@@ -130,7 +135,7 @@ alias[effect:remove_civil_war_target] = scope[country]
 ## scope = country
 alias[effect:remove_civil_war_target] = enum[country_tags]
 
-### Destroys the currently-scoped division. 
+### Destroys the currently-scoped division.
 ## scope = unit
 alias[effect:destroy_unit] = bool
 
