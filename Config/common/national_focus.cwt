@@ -150,16 +150,16 @@ focus_tree = {
 		id = localisation
 
 		## cardinality = ~1..inf
-		icon = <spriteType>
+		icon = <sprite>
 
 		## cardinality = 0..1
 		text_icon = <focus_style>
 
 		## cardinality = 0..1
-		overlay = <spriteType>
+		overlay = <sprite>
 
 		## cardinality = 0..1
-		alternate_icon = <spriteType>
+		alternate_icon = <sprite>
 
 		## cardinality = ~1..inf
 		icon = {
@@ -171,7 +171,7 @@ focus_tree = {
 			}
 
 			## cardinality = ~1..1
-			value = <spriteType>
+			value = <sprite>
 		}
 
 		### A cost of 1 represents a week by default. Decimals within cost are supported, and it will get rounded down to a whole day in the game.
@@ -373,7 +373,7 @@ shared_focus = {
 	text = localisation
 
 	## cardinality = 0..inf
-	icon = <spriteType>
+	icon = <sprite>
 	## cardinality = 0..inf
 	icon = {
 		## cardinality = 0..1
@@ -385,7 +385,7 @@ shared_focus = {
 		value = <sprite>
 	}
 	## cardinality = 0..1
-	overlay = <spriteType>
+	overlay = <sprite>
 
 	## cardinality = 0..1
 	text_icon = <focus_style>
@@ -619,7 +619,7 @@ continous_focus_tree = {
 		id = localisation
 
 		## cardinality = ~1..inf
-		icon = <spriteType>
+		icon = <sprite>
 
 		## cardinality = ~1..inf
 		icon = {
@@ -631,7 +631,7 @@ continous_focus_tree = {
 			}
 
 			## cardinality = ~1..1
-			value = <spriteType>
+			value = <sprite>
 		}
 
 		### The cost in daily political power gain to take this focus compared to not having any focus selected
@@ -705,13 +705,13 @@ style = {
 	default = no
 
 	## cardinality = 1..1
-	unavailable = <spriteType>
+	unavailable = <sprite>
 	## cardinality = 1..1
-	completed = <spriteType>
+	completed = <sprite>
 	## cardinality = 1..1
-	available = <spriteType>
+	available = <sprite>
 	## cardinality = 1..1
-	current = <spriteType>
+	current = <sprite>
 }
 
 search_filter_prios = {
