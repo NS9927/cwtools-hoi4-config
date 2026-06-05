@@ -1,6 +1,6 @@
 types = {
     ## type_key_filter = music_station
-    type[musicstation] = {
+    type[music_station] = {
         path = "music"
         path_extension = .txt
     }
@@ -11,20 +11,20 @@ types = {
         path_extension = .txt
     }
     ## type_key_filter = music
-    type[musicasset] = {
+    type[music_asset] = {
 		path = "music"
         name_field = "name"
 		path_extension = .asset
     }
 }
-musicasset = {
+music_asset = {
     name = localisation
-    file = scalar
+    file = filepath[./]
     ## cardinality = 0..1
     volume = float
 }
 music = {
-    song = <musicasset>
+    song = <music_asset>
     ## cardinality = 0..1
     chance = {
         ## cardinality = 0..1
