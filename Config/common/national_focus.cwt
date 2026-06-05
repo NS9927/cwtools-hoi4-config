@@ -24,6 +24,7 @@ types = {
 	## type_key_filter = focus
 	type[focus] = {
 		path = "game/common/national_focus"
+		skip_root_key = focus_tree
 		name_field = "id"
 	}
 
@@ -31,6 +32,7 @@ types = {
 	## type_key_filter = focus
 	type[continous_focus] = {
 		path = "game/common/continuous_focus"
+		skip_root_key = continuous_focus_palette
 		name_field = "id"
 	}
 
@@ -41,9 +43,11 @@ types = {
 		name_field = "id"
 
 		## only_if_not = { joint_focus }
+		## type_key_filter = shared_focus
 		subtype[shared] = {}
 
 		## only_if_not = { shared_focus }
+		## type_key_filter = joint_focus
 		subtype[joint_focus] = {}
 
 		images = {
@@ -56,6 +60,225 @@ types = {
 	type[search_filter_prios] = {
 		path = "game/common/national_focus"
 	}
+}
+
+focus = {
+    ## cardinality = ~1..1
+    id = localisation
+
+    ## cardinality = ~1..inf
+    icon = <sprite>
+
+    ## cardinality = 0..1
+    text_icon = <focus_style>
+
+    ## cardinality = 0..1
+    overlay = <sprite>
+
+    ## cardinality = 0..1
+    alternate_icon = <sprite>
+
+    ## cardinality = ~1..inf
+    icon = {
+        ## cardinality = 0..1
+        ## replace_scope = { root = country this = country }
+        trigger = {
+            ## cardinality = ~1..inf
+            alias_name[trigger] = alias_match_left[trigger]
+        }
+
+        ## cardinality = ~1..1
+        value = <sprite>
+    }
+
+    ### A cost of 1 represents a week by default. Decimals within cost are supported, and it will get rounded down to a whole day in the game.
+    ## severity = warning
+    cost = float
+
+    ## severity = warning
+    x = float
+
+    ## severity = warning
+    y = float
+
+    ## cardinality = 0..inf
+    offset = {
+        ## cardinality = 0..1
+        x = int
+        ## cardinality = 0..1
+        y = int
+        ## cardinality = 0..1
+        ## replace_scope = { root = country this = country }
+        trigger = {
+            alias_name[trigger] = alias_match_left[trigger]
+        }
+    }
+
+    ## cardinality = 0..1
+    relative_position_id = <focus>
+
+    ## cardinality = 0..1
+    relative_position_id = <shared_focus>
+
+    ### Used for focuses that can change title/desc.
+    ## cardinality = 0..1
+    dynamic = yes
+    ## error_if_only_match = This is the default value and can be ommitted
+    ## severity = info
+    ## cardinality = 0..1
+    dynamic = no
+
+    ## cardinality = 0..1
+    available_if_capitulated = yes
+    ## error_if_only_match = This is the default value and can be ommitted
+    ## severity = info
+    ## cardinality = 0..1
+    available_if_capitulated = no
+
+    ## cardinality = 0..1
+    cancel_if_invalid = no
+    ## error_if_only_match = This is the default value and can be ommitted
+    ## severity = info
+    ## cardinality = 0..1
+    cancel_if_invalid = yes
+
+    ## cardinality = 0..1
+    continue_if_invalid = yes
+    ## error_if_only_match = This is the default value and can be ommitted
+    ## severity = info
+    ## cardinality = 0..1
+    continue_if_invalid = no
+
+    ## cardinality = 0..1
+    cancelable = no
+    ## error_if_only_match = This is the default value and can be ommitted
+    ## severity = info
+    ## cardinality = 0..1
+    cancelable = yes
+
+    ## cardinality = 0..1
+    bypass_if_unavailable = yes
+    ## error_if_only_match = This is the default value and can be ommitted
+    ## severity = info
+    ## cardinality = 0..1
+    bypass_if_unavailable = no
+
+    ## cardinality = 0..inf
+    will_lead_to_war_with = scope[country]
+
+    ## cardinality = 0..inf
+    will_lead_to_war_with = enum[country_tags]
+
+    ## cardinality = 0..inf
+    prerequisite = {
+        ## cardinality = 0..inf
+        focus = <focus>
+
+        ## cardinality = 0..inf
+        focus = <shared_focus>
+    }
+
+    ## cardinality = 0..inf
+    mutually_exclusive = {
+        ## cardinality = 0..inf
+        focus = <focus>
+
+        ## cardinality = 0..inf
+        focus = <shared_focus>
+    }
+
+    ## cardinality = 0..1
+    ## replace_scope = { root = country this = country }
+    bypass = {
+        ## cardinality = ~1..inf
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+
+    ## cardinality = 0..1
+    ## replace_scope = { root = country this = country }
+    bypass_effect = {
+        ## cardinality = ~1..inf
+        alias_name[effect] = alias_match_left[effect]
+    }
+
+    ### Don't bypass focus automatically. Defaults to yes
+    ## cardinality = 0..1
+    enable_automatic_bypass = bool
+
+    ## cardinality = 0..1
+    ## replace_scope = { root = country this = country }
+    allow_branch = {
+        ## cardinality = ~1..inf
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+
+    ## cardinality = 0..1
+    ## replace_scope = { root = country this = country }
+    available = {
+        ## cardinality = ~1..inf
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+
+    ## cardinality = 0..1
+    ## replace_scope = { root = country this = country }
+    cancel = {
+        ## cardinality = ~1..inf
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+
+    ## cardinality = 0..1
+    historical_ai = {
+        ## cardinality = ~1..inf
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+
+    ## cardinality = 0..1
+    ## replace_scope = { root = country this = country }
+    select_effect = {
+        ## cardinality = ~1..inf
+        alias_name[effect] = alias_match_left[effect]
+    }
+
+    ## cardinality = 0..1
+    ## replace_scope = { root = country this = country }
+    cancel_effect = {
+        ## cardinality = ~1..inf
+        alias_name[effect] = alias_match_left[effect]
+    }
+
+    ## cardinality = 0..1
+    ## push_scope = any
+    complete_tooltip = {
+        ## cardinality = ~1..inf
+        alias_name[effect] = alias_match_left[effect]
+    }
+
+    ## cardinality = 0..1
+    ## replace_scope = { root = country this = country }
+    on_uncomplete = {
+        ## cardinality = ~1..inf
+        alias_name[effect] = alias_match_left[effect]
+    }
+
+    ## cardinality = ~1..1
+    ## replace_scope = { root = country this = country }
+    completion_reward = {
+        ## cardinality = ~1..inf
+        alias_name[effect] = alias_match_left[effect]
+    }
+
+    ## cardinality = 0..1
+    ai_will_do = {
+        ## cardinality = 0..1
+        enum[base_factor] = float
+        alias_name[modifier_rule] = alias_match_left[modifier_rule]
+    }
+
+    ## cardinality = 0..1
+    search_filters = {
+        ## cardinality = ~1..inf
+        value_set[focus_filter]
+    }
 }
 
 focus_tree = {
@@ -142,227 +365,6 @@ focus_tree = {
 	### See vanilla GER for examples
 	## cardinality = 0..1
 	alternate_icon_set = localisation
-
-	#### FYI - this can report missing 'text' field. This is a ghost error, caused by other errors/notifications in focus code. Fix them, and this 'text' error will disappear
-	## cardinality = 0..inf
-	focus = {
-		## cardinality = ~1..1
-		id = localisation
-
-		## cardinality = ~1..inf
-		icon = <sprite>
-
-		## cardinality = 0..1
-		text_icon = <focus_style>
-
-		## cardinality = 0..1
-		overlay = <sprite>
-
-		## cardinality = 0..1
-		alternate_icon = <sprite>
-
-		## cardinality = ~1..inf
-		icon = {
-			## cardinality = 0..1
-			## replace_scope = { root = country this = country }
-			trigger = {
-				## cardinality = ~1..inf
-				alias_name[trigger] = alias_match_left[trigger]
-			}
-
-			## cardinality = ~1..1
-			value = <sprite>
-		}
-
-		### A cost of 1 represents a week by default. Decimals within cost are supported, and it will get rounded down to a whole day in the game.
-		## severity = warning
-		cost = float
-
-		## severity = warning
-		x = float
-
-		## severity = warning
-		y = float
-
-		## cardinality = 0..inf
-		offset = {
-			## cardinality = 0..1
-			x = int
-			## cardinality = 0..1
-			y = int
-			## cardinality = 0..1
-			## replace_scope = { root = country this = country }
-			trigger = {
-				alias_name[trigger] = alias_match_left[trigger]
-			}
-		}
-
-		## cardinality = 0..1
-		relative_position_id = <focus>
-
-		## cardinality = 0..1
-		relative_position_id = <shared_focus>
-
-		### Used for focuses that can change title/desc.
-		## cardinality = 0..1
-		dynamic = yes
-		## error_if_only_match = This is the default value and can be ommitted
-		## severity = info
-		## cardinality = 0..1
-		dynamic = no
-
-		## cardinality = 0..1
-		available_if_capitulated = yes
-		## error_if_only_match = This is the default value and can be ommitted
-		## severity = info
-		## cardinality = 0..1
-		available_if_capitulated = no
-
-		## cardinality = 0..1
-		cancel_if_invalid = no
-		## error_if_only_match = This is the default value and can be ommitted
-		## severity = info
-		## cardinality = 0..1
-		cancel_if_invalid = yes
-
-		## cardinality = 0..1
-		continue_if_invalid = yes
-		## error_if_only_match = This is the default value and can be ommitted
-		## severity = info
-		## cardinality = 0..1
-		continue_if_invalid = no
-
-		## cardinality = 0..1
-		cancelable = no
-		## error_if_only_match = This is the default value and can be ommitted
-		## severity = info
-		## cardinality = 0..1
-		cancelable = yes
-
-		## cardinality = 0..1
-		bypass_if_unavailable = yes
-		## error_if_only_match = This is the default value and can be ommitted
-		## severity = info
-		## cardinality = 0..1
-		bypass_if_unavailable = no
-
-		## cardinality = 0..inf
-		will_lead_to_war_with = scope[country]
-
-		## cardinality = 0..inf
-		will_lead_to_war_with = enum[country_tags]
-
-		## cardinality = 0..inf
-		prerequisite = {
-			## cardinality = 0..inf
-			focus = <focus>
-
-			## cardinality = 0..inf
-			focus = <shared_focus>
-		}
-
-		## cardinality = 0..inf
-		mutually_exclusive = {
-			## cardinality = 0..inf
-			focus = <focus>
-
-			## cardinality = 0..inf
-			focus = <shared_focus>
-		}
-
-		## cardinality = 0..1
-		## replace_scope = { root = country this = country }
-		bypass = {
-			## cardinality = ~1..inf
-			alias_name[trigger] = alias_match_left[trigger]
-		}
-
-		## cardinality = 0..1
-		## replace_scope = { root = country this = country }
-		bypass_effect = {
-			## cardinality = ~1..inf
-			alias_name[effect] = alias_match_left[effect]
-		}
-
-		### Don't bypass focus automatically. Defaults to yes
-		## cardinality = 0..1
-		enable_automatic_bypass = bool
-
-		## cardinality = 0..1
-		## replace_scope = { root = country this = country }
-		allow_branch = {
-			## cardinality = ~1..inf
-			alias_name[trigger] = alias_match_left[trigger]
-		}
-
-		## cardinality = 0..1
-		## replace_scope = { root = country this = country }
-		available = {
-			## cardinality = ~1..inf
-			alias_name[trigger] = alias_match_left[trigger]
-		}
-
-		## cardinality = 0..1
-		## replace_scope = { root = country this = country }
-		cancel = {
-			## cardinality = ~1..inf
-			alias_name[trigger] = alias_match_left[trigger]
-		}
-
-		## cardinality = 0..1
-		historical_ai = {
-			## cardinality = ~1..inf
-			alias_name[trigger] = alias_match_left[trigger]
-		}
-
-		## cardinality = 0..1
-		## replace_scope = { root = country this = country }
-		select_effect = {
-			## cardinality = ~1..inf
-			alias_name[effect] = alias_match_left[effect]
-		}
-
-		## cardinality = 0..1
-		## replace_scope = { root = country this = country }
-		cancel_effect = {
-			## cardinality = ~1..inf
-			alias_name[effect] = alias_match_left[effect]
-		}
-
-		## cardinality = 0..1
-		## push_scope = any
-		complete_tooltip = {
-			## cardinality = ~1..inf
-			alias_name[effect] = alias_match_left[effect]
-		}
-
-		## cardinality = 0..1
-		## replace_scope = { root = country this = country }
-		on_uncomplete = {
-			## cardinality = ~1..inf
-			alias_name[effect] = alias_match_left[effect]
-		}
-
-		## cardinality = ~1..1
-		## replace_scope = { root = country this = country }
-		completion_reward = {
-			## cardinality = ~1..inf
-			alias_name[effect] = alias_match_left[effect]
-		}
-
-		## cardinality = 0..1
-		ai_will_do = {
-			## cardinality = 0..1
-			enum[base_factor] = float
-			alias_name[modifier_rule] = alias_match_left[modifier_rule]
-		}
-
-		## cardinality = 0..1
-		search_filters = {
-			## cardinality = ~1..inf
-			value_set[focus_filter]
-		}
-	}
 }
 
 ## replace_scope = { root = country this = country }
