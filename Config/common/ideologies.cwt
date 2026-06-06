@@ -11,80 +11,78 @@ types = {
 }
 
 ideology = {
-	enum[ideology_name] = {
-		types = {
-			## cardinality = ~1..inf
-			scalar = {
-				### won't be assigned to randomly generated country leaders
-				## cardinality = 0..1
-				can_be_randomly_selected = bool
+	types = {
+		## cardinality = ~1..inf
+		scalar = {
+			### won't be assigned to randomly generated country leaders
+			## cardinality = 0..1
+			can_be_randomly_selected = bool
 
-				## cardinality = 0..1
-				color = {
-					## cardinality = 3..3
-					int
-				}
-				## cardinality = 0..1
-				color = {
-					## cardinality = 3..3
-					float
-				}
+			## cardinality = 0..1
+			color = {
+				## cardinality = 3..3
+				int
+			}
+			## cardinality = 0..1
+			color = {
+				## cardinality = 3..3
+				float
 			}
 		}
-
-		ai_ideology_wanted_units_factor = float
-		### Extra threshold value added to DIPLOMATIC_ACTION_PROPOSE_SCORE for this ideology to give back core state control to other country
-		## cardinality = 0..1
-		ai_give_core_state_control_threshold = float
-
-		dynamic_faction_names = {
-			## cardinality = 0..inf
-			localisation
-			## cardinality = 0..inf
-			scalar
-		}
-
-		### RGB color of ideology.
-		## color_type = rgb
-		color = {
-			## cardinality = 3..3
-			int[0..255]
-		}
-
-		rules = {
-			can_force_government = bool
-			can_puppet = bool
-			## cardinality = 0..20
-			enum[game_rules] = bool
-		}
-
-		## cardinality = 0..1
-		can_host_government_in_exile = bool
-		war_impact_on_world_tension = float
-		faction_impact_on_world_tension = float
-
-		### Modifiers applied to countries with this ideology.
-		## push_scope = country
-		modifiers = {
-			## cardinality = ~1..inf
-			alias_name[modifier] = alias_match_left[modifier]
-		}
-
-		## push_scope = country
-		### Modifiers applied to countries with a faction leader of this ideology.
-		faction_modifiers = {
-			## cardinality = ~1..inf
-			alias_name[modifier] = alias_match_left[modifier]
-		}
-
-		## cardinality = 0..1
-		can_be_boosted = bool
-		## cardinality = 0..1
-		can_collaborate = bool
-		## cardinality = 0..1
-		### AI playstyle.
-		enum[ai_ideology] = bool
 	}
+
+	ai_ideology_wanted_units_factor = float
+	### Extra threshold value added to DIPLOMATIC_ACTION_PROPOSE_SCORE for this ideology to give back core state control to other country
+	## cardinality = 0..1
+	ai_give_core_state_control_threshold = float
+
+	dynamic_faction_names = {
+		## cardinality = 0..inf
+		localisation
+		## cardinality = 0..inf
+		scalar
+	}
+
+	### RGB color of ideology.
+	## color_type = rgb
+	color = {
+		## cardinality = 3..3
+		int[0..255]
+	}
+
+	rules = {
+		can_force_government = bool
+		can_puppet = bool
+		## cardinality = 0..20
+		enum[game_rules] = bool
+	}
+
+	## cardinality = 0..1
+	can_host_government_in_exile = bool
+	war_impact_on_world_tension = float
+	faction_impact_on_world_tension = float
+
+	### Modifiers applied to countries with this ideology.
+	## push_scope = country
+	modifiers = {
+		## cardinality = ~1..inf
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+
+	## push_scope = country
+	### Modifiers applied to countries with a faction leader of this ideology.
+	faction_modifiers = {
+		## cardinality = ~1..inf
+		alias_name[modifier] = alias_match_left[modifier]
+	}
+
+	## cardinality = 0..1
+	can_be_boosted = bool
+	## cardinality = 0..1
+	can_collaborate = bool
+	## cardinality = 0..1
+	### AI playstyle.
+	enum[ai_ideology] = bool
 }
 
 enums = {
