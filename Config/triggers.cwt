@@ -716,11 +716,11 @@ alias[trigger:is_border_conflict] = bool
 
 ### Has country completed focus.
 ## scope = country
-alias[trigger:has_completed_focus] = enum[focus_name]
+alias[trigger:has_completed_focus] = <focus>
 
 ### Has country completed focus.
 ## scope = country
-alias[trigger:has_completed_focus] = enum[shared_focus_name]
+alias[trigger:has_completed_focus] = <shared_focus>
 
 ### One country has offensive war against other country.
 ## scope = country
@@ -790,8 +790,8 @@ alias[trigger:num_of_factories] = variable_field
 ###  = { focus = id progress = 0.5 }.
 ## scope = country
 alias[trigger:focus_progress] = {
-	focus = enum[focus_name]
-	focus = enum[shared_focus_name]
+	focus = <focus>
+	focus = <shared_focus>
 	progress = float[0..1.0]
 }
 
@@ -1967,7 +1967,7 @@ alias[trigger:has_dynamic_modifier] = {
 	## cardinality = 0..1
 	### Optional, state or country tag or a variable contains that. if specified the dynamic variable will target that scope.
 	scope = scope[country]
-
+	
 	## cardinality = 0..1
 	### Optional, state or country tag or a variable contains that. if specified the dynamic variable will target that scope.
 	scope = <state>
@@ -2176,7 +2176,7 @@ alias[trigger:has_resources_in_country] = {
 	only_imported = bool
 }
 
-#if updating also update _country_with_original_tag_of and _country_with_original_tag, any_state_in
+#if updating also update _country_with_original_tag_of and _country_with_original_tag, any_state_in 
 # _collection_elements, _country_of, any_other_country_of
 single_alias[any_all_trigger_clause] = {
     ## cardinality = 0..1

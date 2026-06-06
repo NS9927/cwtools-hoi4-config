@@ -43,10 +43,10 @@ bookmark = {
 		## cardinality = 0..1
 		focuses = {
 			## cardinality = 0..3
-            enum[focus_name]
+			<focus>
 
 			## cardinality = 0..3
-            enum[shared_focus_name]
+			<shared_focus>
 		}
 	}
 
