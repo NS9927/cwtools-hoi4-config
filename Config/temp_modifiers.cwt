@@ -33,6 +33,9 @@ alias[modifier:state_production_speed_<building>_factor] = float
 #placed in modifiers file
 alias[modifier:repair_speed_<building>_factor] = float
 alias[modifier:<modifier_definition>] = float
+alias[modifier:enum[general_modifiers_enum]] = float
+alias[modifier:enum[leader_modifiers_enum]] = float
+alias[modifier:enum[unit_modifiers_enum]] = float
 alias[modifier:value[idea_slot]_cost_factor] = float
 alias[modifier:hidden_modifier] = {
 	alias_name[modifier] = alias_match_left[modifier]
