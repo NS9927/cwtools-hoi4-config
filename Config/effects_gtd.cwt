@@ -144,16 +144,16 @@ alias[effect:add_contested_owner] = scope[state]
 
 ### Activates the shine effect on the focus with the given id. Focuses that are completed cannot have an activated shine effect. Note that tooltips for this effect are only shown in debug mode.
 ## scope = country
-alias[effect:activate_shine_on_focus] = <focus>
+alias[effect:activate_shine_on_focus] = enum[focus_name]
 ### Activates the shine effect on the focus with the given id. Focuses that are completed cannot have an activated shine effect. Note that tooltips for this effect are only shown in debug mode.
 ## scope = country
-alias[effect:activate_shine_on_focus] = <shared_focus>
+alias[effect:activate_shine_on_focus] = enum[shared_focus_name]
 ### Deactivate the shine effect on the focus with the given id. The current focus cannot have it's shine effect removed. Note that tooltips for this effect are only shown in debug mode.
 ## scope = country
-alias[effect:deactivate_shine_on_focus] = <focus>
+alias[effect:deactivate_shine_on_focus] = enum[focus_name]
 ### Deactivate the shine effect on the focus with the given id. The current focus cannot have it's shine effect removed. Note that tooltips for this effect are only shown in debug mode.
 ## scope = country
-alias[effect:deactivate_shine_on_focus] = <shared_focus>
+alias[effect:deactivate_shine_on_focus] = enum[shared_focus_name]
 
 ### Complete a special project for the country in scope. This effect will not take into account the current state of the project tree and will allow you to unlock a project even if the one before is not unlocked. Since the project is not completed within a facility, the facility state and scientist effects are NOT applied.
 ## scope = country

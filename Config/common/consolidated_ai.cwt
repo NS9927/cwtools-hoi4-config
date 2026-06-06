@@ -13,9 +13,9 @@ types = {
 		subtype[national_focuses] = {
 			ai_national_focuses = {
 				## cardinality = 0..inf
-				<focus>
+				enum[focus_name]
 				## cardinality = 0..inf
-				<shared_focus>
+				enum[shared_focus_name]
 			}
 		}
 	}
@@ -58,9 +58,9 @@ ai_focus = {
 	subtype[national_focuses] = {
 		ai_national_focuses = {
 			## cardinality = 0..inf
-			<focus>
+			enum[focus_name]
 			## cardinality = 0..inf
-			<shared_focus>
+			enum[shared_focus_name]
 		}
 	}
 

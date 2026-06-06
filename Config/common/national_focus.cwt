@@ -115,10 +115,10 @@ focus = {
     }
 
     ## cardinality = 0..1
-    relative_position_id = <focus>
+    relative_position_id = enum[focus_name]
 
     ## cardinality = 0..1
-    relative_position_id = <shared_focus>
+    relative_position_id = enum[shared_focus_name]
 
     ### Used for focuses that can change title/desc.
     ## cardinality = 0..1
@@ -172,19 +172,19 @@ focus = {
     ## cardinality = 0..inf
     prerequisite = {
         ## cardinality = 0..inf
-        focus = <focus>
+        focus = enum[focus_name]
 
         ## cardinality = 0..inf
-        focus = <shared_focus>
+        focus = enum[shared_focus_name]
     }
 
     ## cardinality = 0..inf
     mutually_exclusive = {
         ## cardinality = 0..inf
-        focus = <focus>
+        focus = enum[focus_name]
 
         ## cardinality = 0..inf
-        focus = <shared_focus>
+        focus = enum[shared_focus_name]
     }
 
     ## cardinality = 0..1
@@ -297,7 +297,7 @@ focus_tree = {
 	reset_on_civilwar = bool
 
 	## cardinality = 0..inf
-	shared_focus = <shared_focus>
+	shared_focus = enum[shared_focus_name]
 
 	## cardinality = 0..1
 	continuous_focus_position = {
@@ -308,7 +308,7 @@ focus_tree = {
 	## cardinality = 0..inf
 	shortcut = {
 		name = localisation
-		target = <focus>
+		target = enum[focus_name]
 		### Optional parameter, if left unset will use existing zoomlevel. Warning: there's no good way for this to respect client resolution.
 		## cardinality = 0..1
 		scroll_wheel_factor = float
@@ -338,10 +338,10 @@ focus_tree = {
 	## cardinality = 0..1
 	initial_show_position = {
 		## cardinality = 0..1
-		focus = <focus>
+		focus = enum[focus_name]
 
 		## cardinality = 0..1
-		focus = <shared_focus>
+		focus = enum[shared_focus_name]
 
 		## cardinality = 0..1
 		x = int
@@ -411,10 +411,10 @@ shared_focus = {
 	}
 
 	## cardinality = 0..1
-	relative_position_id = <shared_focus>
+	relative_position_id = enum[shared_focus_name]
 
 	## cardinality = 0..1
-	relative_position_id = <focus>
+	relative_position_id = enum[focus_name]
 
 	### Used for focuses that can change title/desc.
 	## cardinality = 0..1
@@ -468,18 +468,18 @@ shared_focus = {
 	## cardinality = 0..inf
 	prerequisite = {
 		## cardinality = 0..inf
-		focus = <shared_focus>
+		focus = enum[shared_focus_name]
 
 		## cardinality = 0..inf
-		focus = <focus>
+		focus = enum[focus_name]
 	}
 
 	## cardinality = 0..inf
 	mutually_exclusive = {
 		## cardinality = 0..inf
-		focus = <shared_focus>
+		focus = enum[shared_focus_name]
 		## cardinality = 0..inf
-		focus = <focus>
+		focus = enum[focus_name]
 	}
 
 	## cardinality = 0..1
@@ -719,4 +719,26 @@ style = {
 search_filter_prios = {
 	## cardinality = 0..inf
 	value[focus_filter] = int
+}
+enums = {
+    complex_enum[focus_name] = {
+        path = "game/common/national_focus"
+        start_from_root = yes
+        name = {
+            focus_tree = {
+                focus = {
+                    id = enum_name
+                }
+            }
+        }
+    }
+    complex_enum[shared_focus_name] = {
+        path  = "game/common/national_focus"
+        start_from_root = yes
+        name = {
+            shared_focus = {
+                id = enum_name
+            }
+        }
+    }
 }

@@ -58,8 +58,8 @@ oob = {
 
 	## cardinality = 0..1
 	focus = {
-		current = <focus>
-		current = <shared_focus>
+		current = enum[focus_name]
+		current = enum[shared_focus_name]
 		progress = float[0..inf]
 	}
 

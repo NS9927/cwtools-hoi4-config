@@ -1366,8 +1366,8 @@ alias[effect:break] = yes
 
 ### Unlocks a focus for a country.
 ## scope = country
-alias[effect:unlock_national_focus] = <focus>
-alias[effect:unlock_national_focus] = <shared_focus>
+alias[effect:unlock_national_focus] = enum[focus_name]
+alias[effect:unlock_national_focus] = enum[shared_focus_name]
 
 ### Adds a limited use tech bonus.
 ## scope = country
@@ -1687,15 +1687,15 @@ alias[effect:leave_faction] = bool
 
 ### Unlocks a focus for a country.
 ## scope = country
-alias[effect:complete_national_focus] = <focus>
+alias[effect:complete_national_focus] = enum[focus_name]
 ### Unlocks a focus for a country.
 ## scope = country
-alias[effect:complete_national_focus] = <shared_focus>
+alias[effect:complete_national_focus] = enum[shared_focus_name]
 ### Unlocks a focus for a country.
 ## scope = country
 alias[effect:complete_national_focus] = {
-	focus = <focus>
-	focus = <shared_focus>
+	focus = enum[focus_name]
+	focus = enum[shared_focus_name]
 	### Defaults to no. If yes - spawns bottom right message. If no - uses regular focus completion message
 	## cardinality = 0..1
 	use_side_message = bool

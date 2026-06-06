@@ -65,17 +65,17 @@ ai_strategy_plan = {
 	## cardinality = 0..1
 	ai_national_focuses = {
 		## cardinality = 0..inf
-		<focus>
+		enum[focus_name]
 		## cardinality = 0..inf
-		<shared_focus>
+		enum[shared_focus_name]
 	}
 
 	## cardinality = 0..1
 	focus_factors = {
 		## cardinality = 0..inf
-		<focus> = float
+		enum[focus_name] = float
 		## cardinality = 0..inf
-		<shared_focus> = float
+		enum[shared_focus_name] = float
 	}
 
 	## cardinality = 0..1

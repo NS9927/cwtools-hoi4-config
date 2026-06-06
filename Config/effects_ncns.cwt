@@ -9,13 +9,13 @@
 ### Reduce the cost needed to complete a specific focus. The cost accepts script constants.  
 ## scope = country
 alias[effect:reduce_focus_completion_cost] = {
-	focus = <focus>
-	focus = <shared_focus>
+	focus = enum[focus_name]
+	focus = enum[shared_focus_name]
 	focus = {
 		## cardinality = 0..inf
-		<focus>
+		enum[focus_name]
 		## cardinality = 0..inf
-		<shared_focus>
+		enum[shared_focus_name]
 	}
 	cost = int
 }

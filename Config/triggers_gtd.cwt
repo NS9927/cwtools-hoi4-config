@@ -144,10 +144,10 @@ alias[trigger:province_vp] = int
 
 ### Check if country has shine effect on focus (either manually achieved or by being worked on).
 ## scope = country
-alias[trigger:has_shine_effect_on_focus] = <focus>
+alias[trigger:has_shine_effect_on_focus] = enum[focus_name]
 ### Check if country has shine effect on focus (either manually achieved or by being worked on).
 ## scope = country
-alias[trigger:has_shine_effect_on_focus] = <shared_focus>
+alias[trigger:has_shine_effect_on_focus] = enum[shared_focus_name]
 
 alias[trigger:custom_override_tooltip] = {
 	## cardinality = 0..1
