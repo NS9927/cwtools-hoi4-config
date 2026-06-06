@@ -60,16 +60,3 @@ country_tag_alias = {
 	## cardinality = 0..1
 	fallback = enum[country_tags]
 }
-
-enums = {
-	# this adds to the enum from countries.cwt
-	complex_enum[country_tags] = {
-		path = "game/common/country_tag_aliases"
-		start_from_root = yes
-		name = {
-			enum_name = {
-
-            }
-		}
-	}
-}
