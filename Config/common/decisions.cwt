@@ -89,11 +89,11 @@ decision_category = {
 		}
 	}
 	## cardinality = 0..1
-	picture = <spriteType>
+	picture = <sprite>
 	## cardinality = 0..1
 	picture = {
 		## cardinality = ~1..inf
-		<spriteType> = {
+		<sprite> = {
 			alias_name[trigger] = alias_match_left[trigger]
 		}
 	}
@@ -233,7 +233,7 @@ decision = {
 	## cardinality = 0..1
 	cosmetic_tag = enum[country_tags]
 	## cardinality = 0..1
-	cosmetic_ideology = <ideology>
+	cosmetic_ideology = enum[ideology_name]
 	## cardinality = 0..1
 	priority = int
 	## cardinality = 0..1

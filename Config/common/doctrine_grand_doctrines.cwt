@@ -40,7 +40,7 @@ grand_doctrine = {
 
 	name = localisation
 	description = localisation
-	icon = <spriteType>
+	icon = <sprite>
 	xp_cost = int
 	xp_type = enum[experience_types]
 

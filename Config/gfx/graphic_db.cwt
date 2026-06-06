@@ -25,7 +25,7 @@ graphic_db = {
             ## cardinality = 0..1
             icons = {
                 ## cardinality = 0..inf
-                <spriteType>
+                <sprite>
                 ## cardinality = 0..inf
                 filepath
             }

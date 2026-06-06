@@ -340,7 +340,7 @@ alias[gui:listBoxType] = {
     ## cardinality = 0..1
     offset = { x = int y = int }
     ## cardinality = 0..1
-    backGround = <spriteType>
+    backGround = <sprite>
 }
 
 ### Dynamic List
@@ -536,7 +536,7 @@ alias[gui:scrollbarType] = {
     ## cardinality = 4..4
     guiButtonType = {
         name = value_set[gui_element_name]
-        quadTextureSprite = <spriteType>
+        quadTextureSprite = <sprite>
         position = single_alias_right[gui_position]
         ## cardinality = 0..1
         clicksound = <soundeffect>

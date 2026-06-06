@@ -180,7 +180,7 @@ alias[effect:transfer_units_fraction] = {
 
 ###Removes a ideology leader as leader of his party, making the next in line the new party leader.
 ## scope = { COUNTRY }
-alias[effect:kill_ideology_leader] = <ideology>
+alias[effect:kill_ideology_leader] = enum[ideology_name]
 
 ###Removes a ideology leader as leader of his party, making the next in line the new party leader.
 ## scope = { COUNTRY }
@@ -915,7 +915,7 @@ alias[effect:release] = enum[country_tags]
 alias[effect:set_country_leader_name] = {
 	name = localisation_inline
 	## cardinality = 0..1
-	ideology = <ideology>
+	ideology = enum[ideology_name]
 	## cardinality = 0..1
 	ideology = variable_field
 }
@@ -925,7 +925,7 @@ alias[effect:set_country_leader_name] = {
 alias[effect:set_country_leader_portrait] = {
 	portrait = <sprite>
 	## cardinality = 0..1
-	ideology = <ideology>
+	ideology = enum[ideology_name]
 	## cardinality = 0..1
 	ideology = variable_field
 }
@@ -935,7 +935,7 @@ alias[effect:set_country_leader_portrait] = {
 alias[effect:set_country_leader_description] = {
 	desc = localisation
 	## cardinality = 0..1
-	ideology = <ideology>
+	ideology = enum[ideology_name]
 	## cardinality = 0..1
 	ideology = variable_field
 }

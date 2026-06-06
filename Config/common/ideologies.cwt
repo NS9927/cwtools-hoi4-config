@@ -2,10 +2,6 @@ types = {
 	type[ideology] = {
 		skip_root_key = ideologies
 		path = "game/common/ideologies"
-		subtype[regular] = {
-			types = {
-			}
-		}
 		subtype[predefined] = {
 			## cardinality = 0..0
 			types = {
@@ -15,14 +11,14 @@ types = {
 }
 
 ideology = {
-	subtype[regular] = {
+	enum[ideology_name] = {
 		types = {
 			## cardinality = ~1..inf
 			scalar = {
 				### won't be assigned to randomly generated country leaders
 				## cardinality = 0..1
 				can_be_randomly_selected = bool
-				
+
 				## cardinality = 0..1
 				color = {
 					## cardinality = 3..3
@@ -135,13 +131,21 @@ enums = {
 		ai_neutral
 	}
 
-	complex_enum[sub_ideology] = {
+    complex_enum[ideology_name] = {
+        start_from_root = yes
+        path = "game/common/ideologies"
+        name = {
+            ideologies = {
+                enum_name = {}
+            }
+        }
+    }
+	complex_enum[sub_ideology_name] = {
 		path = "game/common/ideologies"
 		name = {
 			scalar = {
 				types = {
-					enum_name = {
-					}
+					enum_name = {}
 				}
 			}
 		}

@@ -20,7 +20,7 @@ unit_medal = {
 	}
 	
 	frame = int
-	icon = <spriteType>
+	icon = <sprite>
 
 	cost = @cost
 	cost = int

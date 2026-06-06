@@ -286,11 +286,11 @@ alias[trigger:controls_state] = <state>
 
 ### Does country government (ruling party) belong to ideology group.
 ## scope = country
-alias[trigger:has_government] = <ideology>
+alias[trigger:has_government] = enum[ideology_name]
 
 ### Does country government (ruling party) belong to ideology group.
 ## scope = country
-alias[trigger:has_government] = enum[sub_ideology]
+alias[trigger:has_government] = enum[sub_ideology_name]
 
 ### Does country government (ruling party) belong to ideology group.
 ## scope = country
@@ -298,11 +298,11 @@ alias[trigger:has_government] = value[variable]
 
 ### Does country government (ruling party) belong to ideology group.
 ## scope = country
-alias[trigger:has_country_leader_ideology] = <ideology>
+alias[trigger:has_country_leader_ideology] = enum[ideology_name]
 
 ### Does country government (ruling party) belong to ideology group.
 ## scope = country
-alias[trigger:has_country_leader_ideology] = enum[sub_ideology]
+alias[trigger:has_country_leader_ideology] = enum[sub_ideology_name]
 
 ### Does country government (ruling party) belong to ideology group.
 ## scope = country
@@ -2100,7 +2100,7 @@ alias[trigger:<ideology>] = variable_field
 
 ### Checks ideology popularity.
 ## scope = country
-alias[trigger:<ideology>] = <ideology>
+alias[trigger:<ideology>] = enum[ideology_name]
 
 ### Changes scope to opposing army/navy.
 ## scope = { unit_leader combat }

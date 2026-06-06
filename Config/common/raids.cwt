@@ -37,16 +37,16 @@ raid = {
     category = <raid_category>
 
     ## cardinality = 0..1
-    custom_map_icon = <spriteType>
+    custom_map_icon = <sprite>
 
     ## cardinality = 0..1
-    unit_icon = <spriteType>
+    unit_icon = <sprite>
     ## cardinality = 0..1
-    target_icon = <spriteType>
+    target_icon = <sprite>
     ## cardinality = 0..1
     target_loc_key = localisation
     ## cardinality = 0..1
-    equipment_icon = <spriteType>
+    equipment_icon = <sprite>
     ## cardinality = 0..1
     launch_sound = <soundeffect>
 

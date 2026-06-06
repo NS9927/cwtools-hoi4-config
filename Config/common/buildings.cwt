@@ -206,7 +206,7 @@ building = {
 	spawn_point = <spawn_point>
 	
 	## cardinality = 0..1
-	special_icon = <spriteType>
+	special_icon = <sprite>
 
 	## cardinality = 0..1
 	tags = {
