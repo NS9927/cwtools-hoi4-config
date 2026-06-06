@@ -26,6 +26,17 @@ types = {
 		path = "game/common/national_focus"
 		skip_root_key = focus_tree
 		name_field = "id"
+        localisation = {
+            subtype[!hidden] = {
+                name = $|$focus
+                desc = $_desc|$focus
+            }
+        }
+        images = {
+            subtype[!hidden] = {
+                icon = icon
+            }
+        }
 	}
 
 	## unique = yes
@@ -34,6 +45,17 @@ types = {
 		path = "game/common/continuous_focus"
 		skip_root_key = continuous_focus_palette
 		name_field = "id"
+        localisation = {
+            subtype[!hidden] = {
+                name = id
+                desc = $_desc|$id
+            }
+        }
+        images = {
+            subtype[!hidden] = {
+                icon = icon
+            }
+        }
 	}
 
 	## unique = yes
@@ -50,9 +72,15 @@ types = {
 		## type_key_filter = joint_focus
 		subtype[joint_focus] = {}
 
+        localisation = {
+            subtype[!hidden] = {
+                name = id
+                desc = $_desc|$id
+            }
+        }
 		images = {
 			## optional
-			icon = icon # <sprite>
+			icon = icon
 		}
 	}
 
@@ -670,7 +698,7 @@ continous_focus_tree = {
 		}
 
 		## cardinality = 0..1
-		idea = enum[idea_name]
+		idea = <idea>
 
 		## cardinality = 0..1
 		## replace_scope = { root = country this = country }
