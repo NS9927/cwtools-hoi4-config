@@ -9,7 +9,7 @@ bookmark = {
 	name = localisation
 	desc = localisation
 	date = datetime_field
-	picture = scalar
+	picture = <sprite>
 	default_country = enum[country_tags]
 
 	## cardinality = 0..1
@@ -26,7 +26,7 @@ bookmark = {
 		## cardinality = 0..1
 		new_content = yes
 		## cardinality = 0..1
-		override_leader_portrait = <spriteType>
+		override_leader_portrait = <sprite>
 
 		## cardinality = 0..1
 		available = {
