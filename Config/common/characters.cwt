@@ -124,7 +124,7 @@ character = {
 	subtype[country_leader] = {
 		## cardinality = 1..inf
 		country_leader = {
-			ideology = enum[sub_ideology_name]
+			ideology = <sub_ideology>
 			## cardinality = 0..1
 			desc = localisation
 			## cardinality = 0..1
@@ -382,7 +382,7 @@ character = {
 			### Country leader subtype
 			## cardinality = 0..inf
 			country_leader = {
-				ideology = enum[sub_ideology_name]
+				ideology = <sub_ideology>
 				## cardinality = 0..1
 				desc = localisation
 				## cardinality = 0..1

@@ -29,7 +29,7 @@ bookmark = {
 		minor = yes
 
 		history = localisation
-		ideology = enum[ideology_name]
+		ideology = <ideology>
 
 		## cardinality = 0..1
 		new_content = yes

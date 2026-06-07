@@ -288,11 +288,11 @@ alias[trigger:has_idea] = value[advisor_token]
 
 ###Checks if the current character has a country leader role matching the sub-ideology.
 ## scope = { character unit_leader }
-alias[trigger:has_ideology] = enum[sub_ideology_name]
+alias[trigger:has_ideology] = <sub_ideology>
 
 ###Checks if the current character has a country leader role matching the ideology group.
 ## scope = { character unit_leader }
-alias[trigger:has_ideology_group] = enum[ideology_name]
+alias[trigger:has_ideology_group] = <ideology>
 
 ###Check the number of factories in controlled states excluding any gained or lost through trade, relations, modifiers etc.
 ## scope = country

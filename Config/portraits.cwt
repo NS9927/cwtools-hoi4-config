@@ -38,9 +38,9 @@ portrait = {
     ## cardinality = 0..1
 	political = {
         ## cardinality = 0..inf
-		enum[sub_ideology_name] = single_alias_right[portraits]
+		<sub_ideology> = single_alias_right[portraits]
         ## cardinality = 0..inf
-		enum[ideology_name] = single_alias_right[portraits]
+		<ideology> = single_alias_right[portraits]
 	}
     ## cardinality = 0..1
 	scientist = single_alias_right[portraits]
