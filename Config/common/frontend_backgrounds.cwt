@@ -1,0 +1,11 @@
+types = {
+    type[frontend_background] = {
+        path = "game/common/frontend/backgrounds"
+    }
+}
+frontend_background = {
+    ## cardinality = 0..1
+    dlc_allowed = enum[dlc]
+    ## cardinality = 0..1
+    locale = enum[language]
+}

@@ -269,4 +269,17 @@ enums = {
 		FROM.FROM
 		FROM.FROM.FROM
 	}
+
+    enum[language] = {
+        english
+        braz_por
+        french
+        german
+        polish
+        russian
+        spanish
+        japanese
+        simp_chinese
+        korean
+    }
 }
