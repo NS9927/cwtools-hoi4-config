@@ -2,6 +2,14 @@ types = {
 	type[bookmark] = {
 		path = "game/common/bookmarks"
 		skip_root_key = bookmarks
+        localisation = {
+            name = name
+            desc = desc
+            date = date
+        }
+        images = {
+            picture = picture
+        }
 	}
 }
 
