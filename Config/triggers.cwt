@@ -105,7 +105,7 @@ alias[trigger:check_variable] = {
 ## scope = any
 alias[trigger:check_variable] = {
 	var = scalar
-	## error_if_only_match = You can compare variables directly, without "var" and "value"
+	## error_if_only_match = You can compare variables directly, without "var" and "value".
 	## severity = info
 	value = scalar
 	## cardinality = 0..1
@@ -1967,7 +1967,7 @@ alias[trigger:has_dynamic_modifier] = {
 	## cardinality = 0..1
 	### Optional, state or country tag or a variable contains that. if specified the dynamic variable will target that scope.
 	scope = scope[country]
-	
+
 	## cardinality = 0..1
 	### Optional, state or country tag or a variable contains that. if specified the dynamic variable will target that scope.
 	scope = <state>
@@ -2176,7 +2176,7 @@ alias[trigger:has_resources_in_country] = {
 	only_imported = bool
 }
 
-#if updating also update _country_with_original_tag_of and _country_with_original_tag, any_state_in 
+#if updating also update _country_with_original_tag_of and _country_with_original_tag, any_state_in
 # _collection_elements, _country_of, any_other_country_of
 single_alias[any_all_trigger_clause] = {
     ## cardinality = 0..1
