@@ -39,9 +39,7 @@ sub_ideology = {
 }
 
 ideology = {
-	types = {
-        <sub_ideology>
-    }
+	types = {}
 
 	ai_ideology_wanted_units_factor = float
 	### Extra threshold value added to DIPLOMATIC_ACTION_PROPOSE_SCORE for this ideology to give back core state control to other country
