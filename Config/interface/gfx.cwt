@@ -122,22 +122,32 @@ sprite = {
 	subtype[frame_animated_sprite] = {
 		## file_extensions = { png dds tga }
 		textureFile = filepath
+		## cardinality = 0..1
+		noOfFrames = int
+		## cardinality = 0..1
+		default_frame = int
 	}
 	subtype[cornered_tile_sprite] = {
 		## file_extensions = { png dds tga }
 		textureFile = filepath
 		borderSize = single_alias_right[gui_size_coordinates]
 		## cardinality = 0..1
+		borderSize = single_alias_right[gui_size]
+		## cardinality = 0..1
 		tilingCenter = bool
 		size = single_alias_right[gui_size_coordinates]
 		## cardinality = 0..1
+		size = single_alias_right[gui_size]
+		## cardinality = 0..1
 		animation_rate_spf = int
+		## cardinality = 0..1
+		alwaystransparent = bool
 		## cardinality = 0..1
 		allwaystransparent = bool
 	}
 	subtype[masked_shield] = {
-		textureFile1 = scalar
-		textureFile2 = scalar
+		textureFile1 = filepath
+		textureFile2 = filepath
 	}
 	subtype[text_sprite] = {
 		## file_extensions = { png dds tga }
@@ -148,8 +158,8 @@ sprite = {
 		clicksound = click
 	}
 	subtype[progressbar] = {
-		textureFile1 = scalar
-		textureFile2 = scalar
+		textureFile1 = filepath
+		textureFile2 = filepath
 		size = { x = float y = float }
 		horizontal = bool
 		## color_type = hsv
@@ -165,8 +175,8 @@ sprite = {
 		steps = int
 	}
 	subtype[circular_progressbar] = {
-		textureFile1 = scalar
-		textureFile2 = scalar
+		textureFile1 = filepath
+		textureFile2 = filepath
 		size = int
 		rotation = int
 		amount = int

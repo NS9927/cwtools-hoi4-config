@@ -238,6 +238,18 @@ alias[gui:buttonType] = {
     alias_name[gui_standard] = alias_match_left[gui_standard]
     alias_name[gui_image] = alias_match_left[gui_image]
     ## cardinality = 0..1
+    buttonSpriteType = <sprite>
+    ## cardinality = 0..1
+    buttonSprite = <sprite>
+    ## cardinality = 0..1
+    hoverSpriteType = <sprite>
+    ## cardinality = 0..1
+    hoverSprite = <sprite>
+    ## cardinality = 0..1
+    disabledSpriteType = <sprite>
+    ## cardinality = 0..1
+    disabledSprite = <sprite>
+    ## cardinality = 0..1
     buttonText = localisation
     ## cardinality = 0..1
     buttonText = localisation_inline
@@ -537,6 +549,14 @@ alias[gui:scrollbarType] = {
     guiButtonType = {
         name = value_set[gui_element_name]
         quadTextureSprite = <sprite>
+        ## cardinality = 0..1
+        spriteType = <sprite>
+        ## cardinality = 0..1
+        buttonSpriteType = <sprite>
+        ## cardinality = 0..1
+        hoverSpriteType = <sprite>
+        ## cardinality = 0..1
+        disabledSpriteType = <sprite>
         position = single_alias_right[gui_position]
         ## cardinality = 0..1
         clicksound = <soundeffect>
@@ -732,15 +752,41 @@ alias[gui_image:spriteType] = "GFX_power_balance_right"
 alias[gui_image:quadTextureSprite] = <sprite>
 # Bugged vanilla gfx definition, do not remove
 alias[gui_image:quadTextureSprite] = "GFX_bop_glow_effect"
+### Alternate sprite field names used by widgets and older vanilla GUI.
+alias[gui_image:buttonSpriteType] = <sprite>
+alias[gui_image:buttonSprite] = <sprite>
+alias[gui_image:hoverSpriteType] = <sprite>
+alias[gui_image:hoverSprite] = <sprite>
+alias[gui_image:disabledSpriteType] = <sprite>
+alias[gui_image:disabledSprite] = <sprite>
+alias[gui_image:backGround] = <sprite>
+alias[gui_image:textureFile] = <sprite>
+alias[gui_image:textureFile1] = filepath
+alias[gui_image:textureFile2] = filepath
 ### Image Sprite
 single_alias[gui_image:any_image_type] = {
     alias_name[gui_image:spriteType] = alias_match_left[gui_image:spriteType]
     alias_name[gui_image:quadTextureSprite] = alias_match_left[gui_image:quadTextureSprite]
+    alias_name[gui_image:buttonSpriteType] = alias_match_left[gui_image:buttonSpriteType]
+    alias_name[gui_image:buttonSprite] = alias_match_left[gui_image:buttonSprite]
+    alias_name[gui_image:hoverSpriteType] = alias_match_left[gui_image:hoverSpriteType]
+    alias_name[gui_image:hoverSprite] = alias_match_left[gui_image:hoverSprite]
+    alias_name[gui_image:disabledSpriteType] = alias_match_left[gui_image:disabledSpriteType]
+    alias_name[gui_image:disabledSprite] = alias_match_left[gui_image:disabledSprite]
+    alias_name[gui_image:backGround] = alias_match_left[gui_image:backGround]
+    alias_name[gui_image:textureFile] = alias_match_left[gui_image:textureFile]
+    alias_name[gui_image:textureFile1] = alias_match_left[gui_image:textureFile1]
+    alias_name[gui_image:textureFile2] = alias_match_left[gui_image:textureFile2]
 }
 ### Allows clickthrough
 alias[gui_image:alwaystransparent] = bool
 ### Frame of image
 alias[gui_image:frame] = int
+### Static preview hints for progress-style images
+alias[gui_image:horizontal] = bool
+alias[gui_image:startValue] = float
+alias[gui_image:maxValue] = float
+alias[gui_image:minValue] = float
 ### Sets image origin to center
 alias[gui_image:centerposition] = bool
 
