@@ -110,13 +110,12 @@ focus = {
     icon = {
         ## cardinality = 0..1
         ## replace_scope = { root = country this = country }
-        trigger = {
+        <sprite> = {
             ## cardinality = ~1..inf
             alias_name[trigger] = alias_match_left[trigger]
         }
-
-        ## cardinality = ~1..1
-        value = <sprite>
+        ## cardinality = ~1..inf
+        <sprite> = bool
     }
 
     ### A cost of 1 represents a week by default. Decimals within cost are supported, and it will get rounded down to a whole day in the game.
