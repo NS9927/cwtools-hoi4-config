@@ -17,7 +17,30 @@ enums = {
 		"Expansion Pass 1: Supporter Pack"
 		"No Compromise, No Surrender"
 		"Peace For Our Time"
+        "Thunder at Our Gates"
 	}
+
+    enum[version] = {
+        "base_game"
+        "poland_united_and_ready"
+        "together_for_victory"
+        "axis_armor_pack"
+        "death_or_dishonor"
+        "waking_the_tiger"
+        "man_the_guns"
+        "la_resistance"
+        "battle_for_the_bosporus"
+        "no_step_back"
+        "by_blood_alone"
+        "arms_against_tyranny"
+        "trial_of_allegiance"
+        "gotterdammerung"
+        "graveyard_of_empires"
+        "expansion_pass_1_supporter_pack"
+        "no_compromise_no_surrender"
+        "peace_for_our_time"
+        "thunder_at_our_gates"
+    }
 
 	enum[tech_bonus] = {
 		bonus
