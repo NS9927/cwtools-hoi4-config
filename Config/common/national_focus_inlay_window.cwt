@@ -27,7 +27,7 @@ focus_inlay_window = {
             ### If a trigger is provided, then it will be evaluated with the country scope of the focus tree.
 			## replace_scope = { this = country root = country }
 			## cardinality = 0..inf
-            <spriteType> = {
+            <sprite> = {
 				## cardinality = ~1..inf
 				alias_name[trigger] = alias_match_left[trigger]
 			}
@@ -45,7 +45,7 @@ focus_inlay_window = {
 			}
 			### If "yes" is set, then it will always be used. Note: "yes" is commonly the last entry in the list that acts as a default case.
 			## cardinality = 0..1
-			<spriteType> = yes
+			<sprite> = yes
         }
     }
 

@@ -471,7 +471,7 @@ alias[effect:create_country_leader] = {
 	desc = localisation
 	## cardinality = ~1..2
 	picture = scalar
-	ideology = enum[sub_ideology]
+	ideology = <sub_ideology>
 	## cardinality = 0..1
 	expire = datetime_field
 	## cardinality = 0..1
@@ -509,8 +509,8 @@ alias[effect:create_unit] = {
 		## cardinality = 0..1
 		portraits = {
 			army = {
-				large = <spriteType>
-				small = <spriteType>
+				large = <sprite>
+				small = <sprite>
 			}
 		}
 	}
@@ -588,7 +588,7 @@ alias[effect:add_units_to_division_template] = {
 
 ### Change the ideology of active leader.
 ## scope = country
-alias[effect:set_country_leader_ideology] = enum[sub_ideology]
+alias[effect:set_country_leader_ideology] = <sub_ideology>
 
 ### Add trait to active country leader.
 ## scope = country
@@ -601,7 +601,7 @@ alias[effect:add_country_leader_trait] = {
 	## cardinality = 0..1
 	ideology = <ideology>
 	## cardinality = 0..1
-	ideology = enum[sub_ideology]
+	ideology = <sub_ideology>
 }
 
 ### Remove trait from active country leader.
@@ -615,7 +615,7 @@ alias[effect:remove_country_leader_trait] = {
 	## cardinality = 0..1
 	ideology = <ideology>
 	## cardinality = 0..1
-	ideology = enum[sub_ideology]
+	ideology = <sub_ideology>
 }
 
 ### Set properties of a political party.
@@ -658,12 +658,12 @@ alias[effect:set_popularities] = {
 
 ### Add idea(s) to country.
 ## scope = country
-alias[effect:add_ideas] = enum[idea_name]
+alias[effect:add_ideas] = <idea>
 ### Add idea(s) to country.
 ## scope = country
 alias[effect:add_ideas] = {
 	## cardinality = 0..inf
-	enum[idea_name]
+	<idea>
 	## cardinality = 0..inf
 	value[advisor_token]
 	## cardinality = 0..inf
@@ -672,12 +672,12 @@ alias[effect:add_ideas] = {
 
 ### Remove idea(s) from country.
 ## scope = country
-alias[effect:remove_ideas] = enum[idea_name]
+alias[effect:remove_ideas] = <idea>
 ### Remove idea(s) from country.
 ## scope = country
 alias[effect:remove_ideas] = {
 	## cardinality = 0..inf
-	enum[idea_name]
+	<idea>
 	## cardinality = 0..inf
 	value[advisor_token]
 	## cardinality = 0..inf	
@@ -1525,7 +1525,7 @@ alias[effect:remove_unit_leader] = value[unit_leader_ids]
 ### Add time limited idea to country idea, supports days/months/years.
 ## scope = country
 alias[effect:add_timed_idea] = {
-	idea = enum[idea_name]
+	idea = <idea>
 	idea = value[variable]
 	## cardinality = 0..1
 	days = int_variable_field
@@ -1742,7 +1742,7 @@ alias[effect:add_to_war] = {
 
 ### Show what idea does.
 ## scope = country
-alias[effect:show_ideas_tooltip] = enum[idea_name]
+alias[effect:show_ideas_tooltip] = <idea>
 
 ### Show what idea does.
 ## scope = country
@@ -1805,7 +1805,7 @@ alias[effect:create_equipment_variant] = {
 	## cardinality = 0..1
 	icon = filepath
 	## cardinality = 0..1
-	icon = <spriteType>
+	icon = <sprite>
 	## cardinality = 0..1
 	model = <entity>
 	### Who designed that equipment
@@ -1901,8 +1901,8 @@ alias[effect:add_equipment_to_stockpile] = {
 ## scope = country
 alias[effect:swap_ideas] = {
 	remove_idea = value[variable]
-	remove_idea = enum[idea_name]
-	add_idea = enum[idea_name]
+	remove_idea = <idea>
+	add_idea = <idea>
 	add_idea = value[variable]
 
 	### Adds/subtracts X days from the new idea's timeout
@@ -2642,7 +2642,7 @@ alias[effect:remove_targeted_decision] = {
 ### Modify amount of days of a timed idea.
 ## scope = country
 alias[effect:modify_timed_idea] = {
-	idea = enum[idea_name]
+	idea = <idea>
 	idea = value[variable]
 	## cardinality = 0..1
 	days = int_variable_field

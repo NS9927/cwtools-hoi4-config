@@ -28,9 +28,9 @@ types = {
 ## replace_scope = { this = country root = country }
 doctrine_track = {
 	name = localisation
-	background = <spriteType>
-	icon = <spriteType>
-	icon_frame = <spriteType>
+	background = <sprite>
+	icon = <sprite>
+	icon_frame = <sprite>
 	## cardinality = 0..1
 	background_offset = float
 

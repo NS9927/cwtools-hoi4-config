@@ -124,7 +124,7 @@ character = {
 	subtype[country_leader] = {
 		## cardinality = 1..inf
 		country_leader = {
-			ideology = enum[sub_ideology]
+			ideology = <sub_ideology>
 			## cardinality = 0..1
 			desc = localisation
 			## cardinality = 0..1
@@ -382,7 +382,7 @@ character = {
 			### Country leader subtype
 			## cardinality = 0..inf
 			country_leader = {
-				ideology = enum[sub_ideology]
+				ideology = <sub_ideology>
 				## cardinality = 0..1
 				desc = localisation
 				## cardinality = 0..1
@@ -633,7 +633,7 @@ enums = {
 
 
 
-alias[portraitset:large] = <spriteType>
+alias[portraitset:large] = <sprite>
 alias[portraitset:large] = filepath
-alias[portraitset:small] = <spriteType>
+alias[portraitset:small] = <sprite>
 alias[portraitset:small] = filepath

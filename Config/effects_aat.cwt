@@ -186,7 +186,7 @@ alias[effect:set_mio_name_key] = <scripted_loc>
 
 ### Set the icon GFX for the military industrial organization in scope
 ## scope = military_industrial_organization
-alias[effect:set_mio_icon] = <spriteType>
+alias[effect:set_mio_icon] = <sprite>
 
 ### Set flag in the military industrial organization in scope
 ## scope = military_industrial_organization

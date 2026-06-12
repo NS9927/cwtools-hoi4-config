@@ -141,7 +141,7 @@ special_project = {
 	###
 	### GFX key of the icon used to illustrate the Project
 	## cardinality = 0..1
-	icon = <spriteType>
+	icon = <sprite>
 	
 	### Supports multiple tags passed in brackets { tag1 tag2 }
 	###
@@ -159,7 +159,7 @@ special_project = {
 	###
 	### GFX key of the background texture of the project when it is being researched
 	## cardinality = 0..1
-	blueprint_image = <spriteType>
+	blueprint_image = <sprite>
 
 	### - Oil is not allowed here.
 	### - special project cost is always evaluated AFTER production lines resource cost
@@ -299,7 +299,7 @@ single_alias[sp_proto_reward] = {
 	###
 	### GFX key of the icon used to illustrate the Project
 	## cardinality = 0..1
-	icon = <spriteType>
+	icon = <sprite>
 
 	# Optional
 	# Set an allowed trigger for the reward - Defaults to true
@@ -399,13 +399,13 @@ single_alias[sp_proto_reward] = {
 
 specialization = {
 	## cardinality = 0..1
-	blueprint_image = <spriteType>
+	blueprint_image = <sprite>
 	color = {
 		## cardinality = 3..3
 		int
 	}
 	## cardinality = 0..1
-	program_background = <spriteType>
+	program_background = <sprite>
 }
 
 single_alias[sp_iteration_output] = {
