@@ -76,6 +76,15 @@ unit = {
 		rangers = bool
 		## cardinality = 0..1
 		is_artillery_brigade = bool
+		## cardinality = 0..1
+		regimental = bool
+		## cardinality = 0..1
+		divisional = bool
+		## cardinality = 0..1
+		allowed_battalion_groups = {
+			## cardinality = ~1..inf
+			enum[unit_category]
+		}
 
 		## cardinality = 0..1
 		### use this equipment for speed
@@ -112,6 +121,15 @@ unit = {
 		rangers = bool
 		## cardinality = 0..1
 		is_artillery_brigade = bool
+		## cardinality = 0..1
+		regimental = bool
+		## cardinality = 0..1
+		divisional = bool
+		## cardinality = 0..1
+		allowed_battalion_groups = {
+			## cardinality = ~1..inf
+			enum[unit_category]
+		}
 
 		## cardinality = 0..1
 		### Use this equipment for speed.

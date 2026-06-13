@@ -193,6 +193,9 @@ values = {
 		### Returns the token for current party ideology group.
 		current_party_ideology_group
 
+		### Days until the next election. Returns -1 if there is no election.
+		days_until_next_election
+
 		### Timeout in days for a specific timed mission, mission type token is defined in target. Example: days_mission_timeout@GER_mefo_bills_mission.
 		days_mission_timeout@<decision.mission>
 
@@ -397,6 +400,9 @@ values = {
 
 		### (Trigger) Checks convoy threat for a country. Controlled by NAVAL_CONVOY_DANGER defines.
 		convoy_threat
+
+		### Total number of convoys destroyed by the country.
+		convoys_destroyed
 
 		### (Trigger) Checks the current conscription amount of the country.
 		current_conscription_amount
@@ -743,6 +749,9 @@ values = {
 
 		### Average planning ratio of all units.
 		avg_unit_planning_ratio
+
+		### Average entrenchment ratio of all units.
+		avg_unit_entrenchment_ratio
 
 		### Average unit acclimatization for a specific climate, acclimatization type is defined in target. Example avg_units_acclimation@cold_climate.
 		avg_units_acclimation@<acclimatization>

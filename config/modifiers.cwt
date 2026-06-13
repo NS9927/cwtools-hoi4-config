@@ -174,6 +174,8 @@ modifiers = {
 	army_breakthrough_against_minor_factor = army
 	army_core_attack_factor = army
 	army_core_defence_factor = army
+	army_non_core_attack_factor = army
+	army_non_core_defence_factor = army
 	army_defence_against_major_factor = army
 	army_defence_against_minor_factor = army
 	army_defence_factor = army
@@ -199,6 +201,7 @@ modifiers = {
 	cas_damage_reduction = army
 	cavalry_attack_factor = army
 	cavalry_defence_factor = army
+	combat_entrenchment = army
 	combat_width_factor = army
 	coastal_bunker_effectiveness_factor = army
 	command_abilities_cost_factor = army
@@ -2462,6 +2465,8 @@ enums = {
 		army_breakthrough_against_minor_factor
 		army_core_attack_factor
 		army_core_defence_factor
+		army_non_core_attack_factor
+		army_non_core_defence_factor
 		army_defence_against_major_factor
 		army_defence_against_minor_factor
 		army_defence_factor
@@ -2487,6 +2492,7 @@ enums = {
 		cas_damage_reduction
 		cavalry_attack_factor
 		cavalry_defence_factor
+		combat_entrenchment
 		combat_width_factor
 		coastal_bunker_effectiveness_factor
 		command_abilities_cost_factor

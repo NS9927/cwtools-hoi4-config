@@ -1021,6 +1021,48 @@ alias[effect:add_divisional_commander_xp] = int_variable_field
 ## scope = { any }
 alias[effect:officer_xp] = int_variable_field
 
+###Releases the scoped army leader from captivity.
+## scope = { character }
+alias[effect:release_from_captivity] = bool
+
+###Unlocks the specified subunit for the country.
+## scope = { country }
+alias[effect:unlock_subunit] = <unit>
+
+###Makes the scoped country release all captured generals from the specified country.
+## scope = { country }
+alias[effect:release_captured_generals_from] = enum[country_tags]
+###Makes the scoped country release all captured generals from the specified country.
+## scope = { country }
+alias[effect:release_captured_generals_from] = scope[country]
+###Makes the scoped country release captured generals from the specified country and province.
+## scope = { country }
+alias[effect:release_captured_generals_from] = {
+	target = enum[country_tags]
+	target = scope[country]
+	## cardinality = 0..1
+	province = enum[provinces]
+	## cardinality = 0..1
+	province = value[variable]
+}
+
+###Makes the scoped unit leader be captured by the specified country.
+## scope = { unit_leader character }
+alias[effect:capture_by] = enum[country_tags]
+###Makes the scoped unit leader be captured by the specified country.
+## scope = { unit_leader character }
+alias[effect:capture_by] = scope[country]
+###Makes the scoped unit leader be captured by the specified country and province.
+## scope = { unit_leader character }
+alias[effect:capture_by] = {
+	country = enum[country_tags]
+	country = scope[country]
+	## cardinality = 0..1
+	province = enum[provinces]
+	## cardinality = 0..1
+	province = value[variable]
+}
+
 enums = {
     enum[start_pc_scope_enum] = {
         ALL

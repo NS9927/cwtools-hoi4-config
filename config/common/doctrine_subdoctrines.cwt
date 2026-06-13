@@ -43,6 +43,13 @@ subdoctrine = {
 	icon = <sprite>
 	xp_cost = int
 	xp_type = enum[experience_types]
+	## cardinality = 0..1
+	allow_in_multiple_tracks = bool
+	## cardinality = 0..1
+	xor = {
+		## cardinality = ~1..inf
+		<subdoctrine>
+	}
 
 	## cardinality = 0..1
 	available = {

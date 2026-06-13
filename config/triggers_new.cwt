@@ -460,3 +460,52 @@ alias[trigger:is_leading_volunteer_group_with_original_country] = scope[country]
 ###Is leading volunteers in a country with the original tag.
 ## scope = { UNIT_LEADER character }
 alias[trigger:is_leading_volunteer_group_with_original_country] = enum[country_tags]
+
+###Checks if the current character can be captured while deployed in a division.
+## scope = { character }
+alias[trigger:can_be_captured] = bool
+
+###Checks if the leader is visible to its owner.
+## scope = { country }
+alias[trigger:is_leader_visible] = bool
+
+###Checks if the character is in a specific state.
+## scope = { character unit_leader operative }
+alias[trigger:is_in_state] = <state>
+###Checks if the character is in a specific state.
+## scope = { character unit_leader operative }
+alias[trigger:is_in_state] = scope[state]
+###Checks if the character is in a specific state.
+## scope = { character unit_leader operative }
+alias[trigger:is_in_state] = value[variable]
+
+###Checks if the country was a member of a faction when a specific goal was completed.
+## scope = { country }
+alias[trigger:has_completed_goal] = <faction_goal>
+
+###Evaluates a math expression and writes the numeric result to the tooltip.
+## scope = { any }
+alias[trigger:debug_math_expr] = single_alias_right[math_expression]
+
+###Checks if the scoped country has any unit leader captured by the target country.
+## scope = { country }
+alias[trigger:has_any_general_captured_by] = enum[country_tags]
+###Checks if the scoped country has any unit leader captured by the target country.
+## scope = { country }
+alias[trigger:has_any_general_captured_by] = scope[country]
+
+###Checks if the scoped unit leader is captured.
+## scope = { character unit_leader }
+alias[trigger:is_general_captured] = bool
+
+###Checks if any generals of the scoped country are captured by another country.
+## scope = { country }
+alias[trigger:has_any_captured_general] = bool
+
+###Checks if a unit leader was promoted from a unit.
+## scope = { character unit_leader }
+alias[trigger:is_promoted_from_unit] = bool
+
+###Evaluates a math expression and returns true when the result is non-zero.
+## scope = { any }
+alias[trigger:check_expr] = single_alias_right[math_expression]

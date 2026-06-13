@@ -1,0 +1,13 @@
+types = {
+	type[synchronized_dynamic_token] = {
+		path = "game/common/synchronized_dynamic_tokens"
+		type_per_file = yes
+	}
+}
+
+synchronized_dynamic_token = {
+	## cardinality = 0..inf
+	value_set[token]
+	## cardinality = 0..inf
+	scalar
+}
