@@ -24,7 +24,13 @@ bookmark = {
 	default = bool
 
     ## cardinality = 0..1
-    filters = scalar
+    filters = {
+        ## cardinality = 0..inf
+        enum[filter]
+
+        ## cardinality = 0..1
+        label
+    }
 
 	## cardinality = 7..inf
 	enum[country_tags] = {
@@ -44,7 +50,7 @@ bookmark = {
         version = enum[version]
 
         ## cardinality = 0..1
-        enum[filter] = {
+        label = {
             scalar
         }
 
@@ -88,17 +94,10 @@ bookmark = {
 		randomize_weather = 12345
 		randomize_weather = 22345
 	}
-
 }
 enums = {
-    complex_enum[filter] = {
-        path = "game/common/bookmarks"
-        name = {
-            bookmark = {
-                filters = {
-                    enum_name
-                }
-            }
-        }
+    enum[filter] = {
+        "new_content"
+        "continent"
     }
 }
