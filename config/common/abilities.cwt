@@ -36,9 +36,21 @@ ability = {
 	duration = int
 	## cardinality = 0..1
 	cooldown = int
+	## cardinality = 0..1
+	requires_deployed_hq = bool
 
 	## cardinality = 0..1
 	unit_modifiers = {
+		## cardinality = 0..1
+		org_damage_multiplier = float
+		## cardinality = 0..1
+		str_damage_multiplier = float
+		## cardinality = 0..1
+		war_support_reduction_on_damage = float
+		## cardinality = 0..1
+		cannot_retreat_while_attacking = float
+		## cardinality = 0..1
+		cannot_retreat_while_defending = float
 		alias_name[modifier] = alias_match_left[modifier]
 		alias_name[unit_stat] = alias_match_left[unit_stat]
 	}
