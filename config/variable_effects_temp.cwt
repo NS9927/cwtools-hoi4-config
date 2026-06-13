@@ -1,6 +1,8 @@
 single_alias[set_var_equals_value_clause] = {
 	## cardinality = 1..2
 	value_set[variable] = variable_field
+	## cardinality = 1..2
+	value_set[variable] = single_alias_right[math_expression]
 	#### This exists to cull unsupported values. Values above provide some autofill
 	## cardinality = 1..2
 	value_set[variable] = scalar
@@ -11,6 +13,8 @@ single_alias[var_equals_value_clause] = {
 	## cardinality = 1..2
 	scope[country].value[variable] = variable_field
 	## cardinality = 1..2
+	scope[country].value[variable] = single_alias_right[math_expression]
+	## cardinality = 1..2
 	scope[country].value[variable] = scalar
 	## cardinality = 0..1
 	tooltip = localisation
@@ -18,6 +22,7 @@ single_alias[var_equals_value_clause] = {
 single_alias[set_var_and_value_clause] = {
 	var = value_set[variable]
 	value = variable_field
+	value = single_alias_right[math_expression]
 	#### This exists to cull unsupported values. Values above provide some autofill
 	value = scalar
 	## cardinality = 0..1
@@ -26,6 +31,7 @@ single_alias[set_var_and_value_clause] = {
 single_alias[var_and_value_clause] = {
 	var = value[variable]
 	value = variable_field
+	value = single_alias_right[math_expression]
 	#### This exists to cull unsupported values. Values above provide some autofill
 	value = scalar
 	## cardinality = 0..1
@@ -40,6 +46,8 @@ single_alias[var_and_value_clause] = {
 alias[effect:set_temp_variable] = {
 	## cardinality = 1..2
 	value_set[variable] = variable_field
+	## cardinality = 1..2
+	value_set[variable] = single_alias_right[math_expression]
 	## cardinality = 1..2
 	value_set[variable] = scope_field
 	## cardinality = 1..2
@@ -74,6 +82,7 @@ alias[effect:set_temp_variable] = {
 alias[effect:set_temp_variable] = {
 	var = value_set[variable]
 	value = variable_field
+	value = single_alias_right[math_expression]
 	value = scope_field
 	value = token:<ideology>
 	value = token:<ideology>_subtype
@@ -137,9 +146,15 @@ alias[effect:randomize_temp_variable] = {
 	## cardinality = 0..1
 	min = variable_field
 	## cardinality = 0..1
+	min = single_alias_right[math_expression]
+	## cardinality = 0..1
 	max = variable_field
 	## cardinality = 0..1
+	max = single_alias_right[math_expression]
+	## cardinality = 0..1
 	lambda = variable_field
+	## cardinality = 0..1
+	lambda = single_alias_right[math_expression]
 }
 
 ###Modulos a temp variable with another.
@@ -166,7 +181,11 @@ alias[effect:set_temp_variable_to_random] = {
 	## cardinality = 0..1
 	min = variable_field
 	## cardinality = 0..1
+	min = single_alias_right[math_expression]
+	## cardinality = 0..1
 	max = variable_field
+	## cardinality = 0..1
+	max = single_alias_right[math_expression]
 	## cardinality = 0..1
 	integer = bool
 }
