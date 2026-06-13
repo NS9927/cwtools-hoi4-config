@@ -2321,6 +2321,8 @@ alias[effect:unlock_decision_tooltip] = {
 
 ### Add buffs to units that are belongs to the army group/navy of this unit leader.
 ## scope = { character unit_leader }
+## error_if_only_match = This effect no longer works for abilities. Use the ability "unit_modifiers" block instead.
+## severity = warning
 alias[effect:add_temporary_buff_to_units] = {
 	## cardinality = 0..1
 	combat_offense = float

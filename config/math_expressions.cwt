@@ -1,0 +1,55 @@
+single_alias[math_expression_value] = variable_field
+single_alias[math_expression_value] = value[constant]
+single_alias[math_expression_value] = scalar
+single_alias[math_expression_value] = single_alias_right[math_expression]
+
+single_alias[math_expression] = {
+	## cardinality = ~1..1
+	value = single_alias_right[math_expression_value]
+	## cardinality = 0..inf
+	alias_name[math_statement] = alias_match_left[math_statement]
+}
+
+alias[math_statement:multiply] = single_alias_right[math_expression_value]
+alias[math_statement:add] = single_alias_right[math_expression_value]
+alias[math_statement:subtract] = single_alias_right[math_expression_value]
+alias[math_statement:divide] = single_alias_right[math_expression_value]
+alias[math_statement:min] = single_alias_right[math_expression_value]
+alias[math_statement:max] = single_alias_right[math_expression_value]
+
+alias[math_statement:greater_than] = single_alias_right[math_expression_value]
+alias[math_statement:less_than] = single_alias_right[math_expression_value]
+alias[math_statement:greater_than_or_equals] = single_alias_right[math_expression_value]
+alias[math_statement:less_than_or_equals] = single_alias_right[math_expression_value]
+alias[math_statement:equals] = single_alias_right[math_expression_value]
+alias[math_statement:not_equals] = single_alias_right[math_expression_value]
+
+alias[math_statement:round] = yes
+
+alias[math_statement:clamp] = {
+	## cardinality = ~1..1
+	min = single_alias_right[math_expression_value]
+	## cardinality = ~1..1
+	max = single_alias_right[math_expression_value]
+}
+
+alias[math_statement:if] = {
+	## cardinality = ~1..1
+	limit = single_alias_right[math_expression]
+	## cardinality = 0..inf
+	alias_name[math_statement] = alias_match_left[math_statement]
+}
+
+alias[math_statement:else] = {
+	## cardinality = 0..inf
+	alias_name[math_statement] = alias_match_left[math_statement]
+}
+
+## push_scope = any
+alias[math_statement:every_collection] = {
+	named_collection = <collection>
+	named_collection = collection:<collection>
+	named_collection = enum[built_in_collections]
+	## cardinality = 0..inf
+	alias_name[math_statement] = alias_match_left[math_statement]
+}

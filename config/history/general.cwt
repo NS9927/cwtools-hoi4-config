@@ -1,0 +1,25 @@
+types = {
+	type[general_history] = {
+		path = "game/history/general"
+		type_per_file = yes
+	}
+}
+
+single_alias[general_hq_template_clause] = single_alias_right[division_template_clause]
+
+general_history = {
+	## cardinality = 0..inf
+	division_template = single_alias_right[division_template_clause]
+
+	## cardinality = 0..inf
+	hq_template = single_alias_right[general_hq_template_clause]
+
+	## cardinality = 0..inf
+	enum[country_tags] = {
+		## cardinality = 0..inf
+		division_template = single_alias_right[division_template_clause]
+
+		## cardinality = 0..inf
+		hq_template = single_alias_right[general_hq_template_clause]
+	}
+}

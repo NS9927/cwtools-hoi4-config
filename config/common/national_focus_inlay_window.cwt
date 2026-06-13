@@ -49,6 +49,17 @@ focus_inlay_window = {
         }
     }
 
+	### List of progressbars that should fill up based on a variable
+	## cardinality = 0..1
+	scripted_progressbars = {
+		### Name of the progressbar (must be a subcomponent of "gui_component_name" or a button)
+		## cardinality = ~1..inf
+		value[gui_element_name] = {
+			progress = value[variable]
+			progress = variable_field
+		}
+	}
+
 	### List of scriptable buttons
 	## cardinality = 0..1
 	scripted_buttons = { # List of scriptable buttons

@@ -92,6 +92,8 @@ raid = {
     ## cardinality = 0..1
 	range_factor = int
     ## cardinality = 0..1
+    max_distance = int_variable_field
+    ## cardinality = 0..1
 	unlimited_ai_range = bool
 
     ## replace_scope = { this = country root = country FROM = country }
@@ -308,6 +310,9 @@ raid = {
         ## cardinality = 0..1
         disaster = single_alias_right[raid_factors]
     }
+
+    ## cardinality = 0..1
+    ai_min_success_chance = float
 
 }
 

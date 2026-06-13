@@ -16,12 +16,21 @@ types = {
 bookmark = {
 	name = localisation
 	desc = localisation
-	date = datetime_field
+	date = date_field[y.m.d.h]
 	picture = <sprite>
 	default_country = enum[country_tags]
 
 	## cardinality = 0..1
 	default = bool
+
+    ## cardinality = 0..1
+    filters = {
+        ## cardinality = 0..inf
+        enum[filter]
+
+        ## cardinality = 0..1
+        label
+    }
 
 	## cardinality = 7..inf
 	enum[country_tags] = {
@@ -33,8 +42,23 @@ bookmark = {
 
 		## cardinality = 0..1
 		new_content = yes
+
 		## cardinality = 0..1
-		override_leader_portrait = <sprite>
+		override_leader_portrait = scope[character]
+
+        ## cardinality = 0..1
+        version = enum[version]
+
+        ## cardinality = 0..1
+        label = {
+            scalar
+        }
+
+        ## cardinality = 0..1
+        required_dlc = {
+            ## cardinality = ~1..inf
+            enum[dlc]
+        }
 
 		## cardinality = 0..1
 		available = {
@@ -70,5 +94,22 @@ bookmark = {
 		randomize_weather = 12345
 		randomize_weather = 22345
 	}
-
+}
+enums = {
+    enum[filter] = {
+        "new_content"
+        "continent"
+    }
+    complex_enum[label] = {
+        path = "game/common/bookmarks"
+        name = {
+            bookmark = {
+                scalar = {
+                    label = {
+                        enum_name
+                    }
+                }
+            }
+        }
+    }
 }
