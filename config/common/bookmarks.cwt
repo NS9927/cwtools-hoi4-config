@@ -100,4 +100,16 @@ enums = {
         "new_content"
         "continent"
     }
+    complex_enum[label] = {
+        path = "game/common/bookmarks"
+        name = {
+            bookmark = {
+                scalar = {
+                    label = {
+                        enum_name
+                    }
+                }
+            }
+        }
+    }
 }
