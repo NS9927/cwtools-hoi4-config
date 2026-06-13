@@ -78,10 +78,6 @@ alias[trigger:reserves] = int
 
 ### Country tag trigger.
 ## scope = { country combat }
-alias[trigger:tag] = scope[country]
-
-### Country tag trigger.
-## scope = { country combat }
 alias[trigger:tag] = enum[country_tags]
 
 ### Check if any country meets the trigger.
