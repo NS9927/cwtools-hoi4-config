@@ -1017,6 +1017,10 @@ alias[effect:set_occupation_law] = <occupation_law>
 ## scope = { any }
 alias[effect:add_divisional_commander_xp] = int_variable_field
 
+###Add officer xp.
+## scope = { any }
+alias[effect:officer_xp] = int_variable_field
+
 enums = {
     enum[start_pc_scope_enum] = {
         ALL

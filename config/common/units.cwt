@@ -223,6 +223,39 @@ unit = {
 	alias_name[unit_stat] = alias_match_left[unit_stat]
 
 	## cardinality = 0..1
+	deployed_leader_modifiers = {
+		alias_name[modifier] = alias_match_left[modifier]
+		alias_name[unit_stat] = alias_match_left[unit_stat]
+	}
+
+	## cardinality = 0..1
+	allow_in_army_hq = bool
+
+	## cardinality = 0..1
+	allow_in_non_army_hq = bool
+
+	## cardinality = 0..1
+	required_dlc = enum[dlc]
+
+	## cardinality = 0..1
+	required_dlc = {
+		## cardinality = ~1..inf
+		enum[dlc]
+	}
+
+	## cardinality = 0..1
+	deployment_cost = int_variable_field
+
+	## cardinality = 0..1
+	enable_ability = <ability>
+
+	## cardinality = 0..1
+	enable_ability = {
+		## cardinality = ~1..inf
+		<ability>
+	}
+
+	## cardinality = 0..1
 	own_equipment_fuel_consumption_mult = float
 
 	## cardinality = 0..1
