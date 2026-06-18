@@ -20,6 +20,9 @@ bookmark = {
 	picture = <sprite>
 	default_country = enum[country_tags]
 
+    ## cardinality = 0..1
+    sort_unplayed_first = bool
+
 	## cardinality = 0..1
 	default = bool
 
