@@ -88,22 +88,13 @@ alias[trigger:any_country] = single_alias_right[any_all_trigger_clause]
 ### Compares a variable to a number or variable.
 ## scope = any
 alias[trigger:check_variable] = {
-	## cardinality = 1..4
-	scalar = scalar
-	### Defaults to greater_than_or_equals.
-	## cardinality = 0..1
-	compare = enum[var_compares]
-	## cardinality = 0..1
-	tooltip = localisation
-}
-
-### Compares a variable to a number or variable.
-## scope = any
-alias[trigger:check_variable] = {
 	var = scalar
-	## error_if_only_match = You can compare variables directly, without "var" and "value".
-	## severity = info
+    ## cardinality = 0..1
 	value = scalar
+    ## cardinality = 0..1
+    value[variable] = scalar
+    ## cardinality = 0..1
+    mtth:<mtth> = scalar
 	## cardinality = 0..1
 	### Defaults to greater_than_or_equals.
 	compare = enum[var_compares]

@@ -9,64 +9,64 @@ on_actions = {
 	on_startup
 
 	### Trigger the following commands when a country annex a subject. ROOT is the subject, FROM is the overlord.
-	## replace_scope = { this = country root = country }
+	## replace_scopes = { this = country root = country }
 	## event_type = country
 	on_daily
 
 	### Triggered daily for the specified country. Only runs the effects if the country exists. Tag isn't checked for validity
-	## replace_scope = { this = country root = country }
+	## replace_scopes = { this = country root = country }
 	## event_type = country
 	ant:on_daily_*
 
 	### Triggers each week for every country separately. Useful for ai scripting. Runs on the beginning of the day if the num_days variable is divisible by 7.
-	## replace_scope = { this = country root = country }
+	## replace_scopes = { this = country root = country }
 	## event_type = country
 	on_weekly
 
 	### Triggered weekly for the specified country. Only runs the effects if the country exists. Runs on the beginning of the day if the num_days variable is divisible by 7. Tag isn't checked for validity
-	## replace_scope = { this = country root = country }
+	## replace_scopes = { this = country root = country }
 	## event_type = country
 	ant:on_weekly_*
 
 	### Triggers each month for every country separately.
-	## replace_scope = { this = country root = country }
+	## replace_scopes = { this = country root = country }
 	## event_type = country
 	on_monthly
 
 	### Triggered monthly for the specified country. Only runs the effects if the country exists. Tag isn't checked for validity
-	## replace_scope = { this = country root = country }
+	## replace_scopes = { this = country root = country }
 	## event_type = country
 	ant:on_monthly_*
 
 	# Political on actions
 
 	### For the non LaR stage coup. ROOT is the country that stages the coup, FROM is the target country.
-	## replace_scope = { this = state root = state from = country }
+	## replace_scopes = { this = state root = state from = country }
 	## event_type = country
 	on_stage_coup
 
 	### For the non LaR stage coup action. Trigger the following commands whenever a coup succeeds. ROOT is the country that coup succeeded in, FROM is the stager of the coup
-	## replace_scope = { this = country root = country }
+	## replace_scopes = { this = country root = country }
 	## event_type = country
 	on_coup_succeeded
 
 	### Trigger the following commands whenever a country switches its government.
 	### This includes set_politics and start_civil_war (always for both sides) and excludes being puppeted. Will always also trigger on_ruling_party_change.
-	## replace_scope = { this = country root = country }
+	## replace_scopes = { this = country root = country }
 	## event_type = country
 	on_government_change
 
 	### Trigger the following commands whenever a country switches its ideology.
 	### Happens only after all effects in the block that triggered it have been processed.
 	### old_ideology_token is a temporary variable that stores the old ideology as a token. Alongside what triggers on_government_change, also includes being puppeted or changing the ideology via a console command.
-	## replace_scope = { this = country root = country }
+	## replace_scopes = { this = country root = country }
 	## event_type = country
 	on_ruling_party_change
 
 	### Trigger the following commands whenever a country switches its ideology.
 	### Happens immediately after the effect that has triggered it.
 	### old_ideology_token is a temporary variable that stores the old ideology as a token. Alongside what triggers on_government_change, also includes being puppeted or changing the ideology via a console command.
-	## replace_scope = { this = country root = country }
+	## replace_scopes = { this = country root = country }
 	## event_type = country
 	on_ruling_party_change_immediate
 
@@ -442,67 +442,67 @@ on_actions = {
 	on_ace_killed_by_ace
 
 	### Trigger the following commands whenever an aces is killed by another ace (surviving ace side). FROM = our ace, PREV = enemy ace, killed by FROM.
-	## replace_scope = { this = country root = country from = any prev = any }
+	## replace_scopes = { this = country root = country from = any prev = any }
 	## event_type = country
 	on_ace_killed_other_ace
 
 	### Trigger the following commands whenever two aces kill each other in air duel. FROM = our ace, PREV = enemy ace, has killed FROM.
-	## replace_scope = { this = country root = country from = any prev = any }
+	## replace_scopes = { this = country root = country from = any prev = any }
 	## event_type = country
 	on_aces_killed_each_other
 
 	# La Résistance on actions
 
 	### Trigger the following commands whenever an operative completed. THIS - the operative, ROOT - the initiating country, FROM - the target country.
-	## replace_scope = { this = operation root = country from = country }
+	## replace_scopes = { this = operation root = country from = country }
 	## event_type = operative_leader
 	on_operation_completed
 
 	### Trigger the following commands whenever an operative dies.
 	### THIS - the operative, ROOT - the killer country (optional), FROM - the country the operative is operating for, FROM.FROM - operation state (will only be set if the operation has a specific selection_target).
-	## replace_scope = { this = operative root = country from = country fromfrom = state }
+	## replace_scopes = { this = operative root = country from = country fromfrom = state }
 	## event_type = operative_leader
 	on_operative_detected_during_operation
 
 	### Trigger the following commands whenever an operative performing an offensive mission in a country.
 	### THIS - the operative, FROM - the country the operative was performing its mission in, ROOT - the country the operative is operating for.
-	## replace_scope = { this = operative root = country from = country }
+	## replace_scopes = { this = operative root = country from = country }
 	## event_type = operative_leader
 	on_operative_on_mission_spotted
 
 	### Trigger the following commands whenever an operative is captured.
 	### THIS - the operative, ROOT - the country the operative was performing its mission in, FROM - the country the operative is operating for.
-	## replace_scope = { this = operative root = country from = country }
+	## replace_scopes = { this = operative root = country from = country }
 	## event_type = operative_leader
 	on_operative_captured
 
 	### Trigger the following commands whenever an operative is created.
 	### THIS - the operative, FROM - the country the operative is created by.
-	## replace_scope = { this = operative root = operative from = country }
+	## replace_scopes = { this = operative root = operative from = country }
 	## event_type = operative_leader
 	on_operative_created
 
 	### Trigger the following commands whenever an operative dies.
 	### THIS - the operative, ROOT - the killer country (optional), FROM - the country the operative is operating for
-	## replace_scope = { this = operative root = country from = country }
+	## replace_scopes = { this = operative root = country from = country }
 	## event_type = operative_leader
 	on_operative_death
 
 	### Trigger the following commands whenever an operative is recruited.
 	### THIS - the operative, FROM - the country the operative is created by.
-	## replace_scope = { this = operative root = operative from = country }
+	## replace_scopes = { this = operative root = operative from = country }
 	## event_type = operative_leader
 	on_operative_recruited
 
 	### Trigger the following commands whenever a country fully decrypts cipher of a target country.
 	### THIS - the target country that its cipher is decrypted, FROM - the decrypter country.
-	## replace_scope = { this = country root = country from = country }
+	## replace_scopes = { this = country root = country from = country }
 	## event_type = country
 	on_fully_decrypted_cipher
 
 	### Trigger the following commands whenever a country activates its active cipher bonuses against a target.
 	### THIS - the target country, FROM - the country that activates its bonuses.
-	## replace_scope = { this = country root = country from = country }
+	## replace_scopes = { this = country root = country from = country }
 	## event_type = country
 	on_activated_active_decryption_bonuses
 
@@ -510,45 +510,45 @@ on_actions = {
 
 	### Trigger the following commands whenever a MIO increases in size (levels up).
 	### ROOT is the Military Industrial Organization, FROM is the owner of the MIO country
-	## replace_scope = { this = military_industrial_organization root = military_industrial_organization from = country  }
+	## replace_scopes = { this = military_industrial_organization root = military_industrial_organization from = country  }
 	## event_type = scopeless
 	on_mio_size_increased
 
 	### Trigger the following commands whenever a MIO is assigned to technology research.
 	### ROOT is the Military Industrial Organization, FROM is the owner of the MIO country
-	## replace_scope = { this = military_industrial_organization root = military_industrial_organization from = country  }
+	## replace_scopes = { this = military_industrial_organization root = military_industrial_organization from = country  }
 	## event_type = scopeless
 	on_mio_design_team_assigned_to_tech
 
 	### Trigger the following commands whenever a MIO is asigned to a variant.
 	### ROOT is the Military Industrial Organization, FROM is the owner of the MIO country
-	## replace_scope = { this = military_industrial_organization root = military_industrial_organization from = country  }
+	## replace_scopes = { this = military_industrial_organization root = military_industrial_organization from = country  }
 	## event_type = scopeless
 	on_mio_design_team_assigned_to_variant
 
 	### Trigger the following commands whenever a MIO assigned to a production line.
 	### ROOT is the Military Industrial Organization, FROM is the owner of the MIO country
-	## replace_scope = { this = military_industrial_organization root = military_industrial_organization from = country  }
+	## replace_scopes = { this = military_industrial_organization root = military_industrial_organization from = country  }
 	## event_type = scopeless
 	on_mio_industrial_manufacturer_assigned
 
 	### Currently does not work.
 	### Trigger the following commands whenever a technology a MIO is assigned to is canceled.
 	### ROOT is the Military Industrial Organization, FROM is the owner of the MIO country
-	## replace_scope = { this = military_industrial_organization root = military_industrial_organization from = country  }
+	## replace_scopes = { this = military_industrial_organization root = military_industrial_organization from = country  }
 	## event_type = scopeless
 	on_mio_tech_research_cancelled
 
 	### Currently does not work.
 	### Trigger the following commands whenever a technology a MIO is assigned to is completed.
 	### ROOT is the Military Industrial Organization, FROM is the owner of the MIO country
-	## replace_scope = { this = military_industrial_organization root = military_industrial_organization from = country  }
+	## replace_scopes = { this = military_industrial_organization root = military_industrial_organization from = country  }
 	## event_type = scopeless
 	on_mio_tech_research_completed
 
 	### Trigger the following commands whenever a MIO is unnasigned from a production line.
 	### ROOT is the Military Industrial Organization, FROM is the owner of the MIO country
-	## replace_scope = { this = military_industrial_organization root = military_industrial_organization from = country  }
+	## replace_scopes = { this = military_industrial_organization root = military_industrial_organization from = country  }
 	## event_type = scopeless
 	on_mio_industrial_manufacturer_unassigned
 
@@ -556,26 +556,26 @@ on_actions = {
 
 	### Triggered when a project is completed
 	### ROOT is the owner of the special project, FROM is the special project
-	## replace_scope = { this = country root = country from = special_project }
+	## replace_scopes = { this = country root = country from = special_project }
 	## event_type = country
 	on_project_completion
 
 	### ROOT is winner, FROM is loser (called for all winners against all losers)
-	## replace_scope = { this = country root = country from = country }
+	## replace_scopes = { this = country root = country from = country }
 	## event_type = country
 	on_before_peace_conference_start
 
 	# ------------ International Market on actions ------------
 
-	## replace_scope = { this = contract root = contract }
+	## replace_scopes = { this = contract root = contract }
 	## event_type = scopeless
 	on_contract_started
 
-	## replace_scope = { this = contract root = contract }
+	## replace_scopes = { this = contract root = contract }
 	## event_type = scopeless
 	on_contract_finished
 
-	## replace_scope = { this = contract root = contract }
+	## replace_scopes = { this = contract root = contract }
 	## event_type = scopeless
 	on_contract_cancelled
 }
