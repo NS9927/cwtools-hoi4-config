@@ -60,5 +60,7 @@ values = {
 	}
 }
 
+alias[array:value_array] = value[array]
+alias[array:scope_array] = scope[country].value[array]
+
 single_alias[array] = value[array]
-single_alias[array] = scope[country].value[array]

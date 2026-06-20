@@ -94,7 +94,11 @@ alias[trigger:check_variable] = {
     ## cardinality = 0..1
     value[variable] = scalar
     ## cardinality = 0..1
+    value[variable] = value[variable]
+    ## cardinality = 0..1
     mtth:<mtth> = scalar
+    ## cardinality = 0..1
+    mtth:<mtth> = mtth:<mtth>
 	## cardinality = 0..1
 	### Defaults to greater_than_or_equals.
 	compare = enum[var_compares]
