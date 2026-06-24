@@ -35,7 +35,7 @@ bookmark = {
         label
     }
 
-	## cardinality = 7..inf
+	## cardinality = 1..inf
 	enum[country_tags] = {
 		## cardinality = 0..1
 		minor = yes
