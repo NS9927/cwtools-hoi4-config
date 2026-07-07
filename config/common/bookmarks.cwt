@@ -50,7 +50,7 @@ bookmark = {
 		new_content = yes
 
 		## cardinality = 0..1
-		override_leader_portrait = scope[character]
+		override_leader_portrait = <character>
 
         ## cardinality = 0..1
         version = enum[version]
@@ -74,7 +74,7 @@ bookmark = {
 
 		## cardinality = 0..1
 		ideas = {
-			## cardinality = ~1..inf
+			## cardinality = 0..inf
 			<idea>
 		}
 
@@ -101,6 +101,7 @@ bookmark = {
 		randomize_weather = 22345
 	}
 }
+
 enums = {
     enum[filter] = {
         "new_content"
