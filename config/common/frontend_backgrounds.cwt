@@ -8,4 +8,6 @@ frontend_background = {
     dlc_allowed = enum[dlc]
     ## cardinality = 0..1
     locale = enum[language]
+    ## cardinality = 0..1
+    gfx = <sprite>
 }
