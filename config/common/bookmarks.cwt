@@ -37,11 +37,14 @@ bookmark = {
 
 	## cardinality = 1..inf
 	enum[country_tags] = {
-		## cardinality = 0..1
-		minor = yes
-
 		history = localisation
 		ideology = <ideology>
+
+        ## cardinality = 0..1
+        assume_not_played_if_missing_data = yes
+
+        ## cardinality = 0..1
+        minor = yes
 
 		## cardinality = 0..1
 		new_content = yes
