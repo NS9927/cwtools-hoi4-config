@@ -21,6 +21,18 @@ bookmark = {
 	default_country = enum[country_tags]
 
     ## cardinality = 0..1
+    scrollable_country_list = bool
+
+    ## cardinality = 0..1
+    apply_filter_to_other_country = bool
+
+    ## cardinality = 0..1
+    apply_filter_to_majors = bool
+
+    ## cardinality = 0..1
+    include_majors_in_minor_list = bool
+
+    ## cardinality = 0..1
     sort_unplayed_first = bool
 
 	## cardinality = 0..1
@@ -41,16 +53,16 @@ bookmark = {
 		ideology = <ideology>
 
         ## cardinality = 0..1
-        assume_not_played_if_missing_data = yes
+        assume_not_played_if_missing_data = bool
 
         ## cardinality = 0..1
-        minor = yes
+        minor = bool
 
 		## cardinality = 0..1
-		new_content = yes
+		new_content = bool
 
 		## cardinality = 0..1
-		override_leader_portrait = scope[character]
+		override_leader_portrait = <character>
 
         ## cardinality = 0..1
         version = enum[version]
@@ -74,7 +86,7 @@ bookmark = {
 
 		## cardinality = 0..1
 		ideas = {
-			## cardinality = ~1..inf
+			## cardinality = 0..inf
 			<idea>
 		}
 
@@ -91,7 +103,7 @@ bookmark = {
 	## cardinality = 0..1
 	"---" = {
 		## cardinality = 0..1
-		minor = yes
+		minor = bool
 
 		history = localisation
 	}
@@ -101,6 +113,7 @@ bookmark = {
 		randomize_weather = 22345
 	}
 }
+
 enums = {
     enum[filter] = {
         "new_content"
