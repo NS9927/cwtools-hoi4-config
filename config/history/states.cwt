@@ -90,6 +90,11 @@ state = {
 	state_category = <state_category>
 	## cardinality = 0..1
 	impassable = yes
+	## cardinality = 0..1
+	impassable_ignored_links = {
+		## cardinality = ~1..inf
+		<state>
+	}
 }
 
 state_category = {

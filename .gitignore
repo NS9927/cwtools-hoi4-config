@@ -1,4 +1,5 @@
-.config
+.config/
+.codex/
 .idea/
 testmod/
 .ionide/symbolCache.db

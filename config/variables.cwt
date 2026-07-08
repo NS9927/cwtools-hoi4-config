@@ -1026,7 +1026,7 @@ values = {
 
 		### Array with country list scores
 		country_list_scores
-		
+
 		### Sorted country array
 		sorted_country_list
 
@@ -1098,41 +1098,41 @@ values = {
 		### calculates the number of civilian factories on core states of current country scope, on those states that are under control of @Tag  <Tag | ROOT | my_var> example num_of_military_factories_in_cores@GER
 		num_of_military_factories_in_cores@scope[country]
 		num_of_military_factories_in_cores@enum[country_tags]
-		
+
 		### calculates the number of civilian factories on core states of current country scope, on those states that are under control of @Tag  <Tag | ROOT | my_var> example num_of_naval_factories_in_cores@my_var
 		num_of_naval_factories_in_cores@scope[country]
 		num_of_naval_factories_in_cores@enum[country_tags]
-		
+
 		### Total produced equipment of typesam_missile
 		total_equipment_produced_sam_missile
-		
+
 		### Total constructions of gun_emplacement
 		total_constructed_gun_emplacement
-		
+
 		### Total produced equipment of typeclearance_vehicle
 		total_equipment_produced_clearance_vehicle
-		
+
 		### Total produced equipment of typeballistic_missile
 		total_equipment_produced_ballistic_missile
-		
+
 		### Total produced equipment of typeland_cruiser
 		total_equipment_produced_land_cruiser
-		
+
 		### Total produced equipment of typeemplacement_gun_ammo
 		total_equipment_produced_emplacement_gun_ammo
-		
+
 		### Total produced equipment of typemissile_launcher
 		total_equipment_produced_missile_launcher
-		
+
 		### Total produced equipment of typenuclear_missile
 		total_equipment_produced_nuclear_missile
 
 		### total number of nukes that are currently ready to be dropped
 		num_nukes_being_dropped
-		
+
 		### number of nukes left to drop during this game tick (only useful in-between nuke drops, like in on_nuke_drop on-action, for example)
 		num_nukes_left_to_drop
-		
+
 		#Special project scoped variables:
 		### State that the project is researched in
 		facility_state
@@ -1140,7 +1140,7 @@ values = {
 		facility_province_id
 		### The scientist that researches the project
 		scientist
-		
+
 		# ========================
 		# RAID VARIABLES
 		# ========================
@@ -1148,7 +1148,7 @@ values = {
 		victim_country
 		target_state
 		target_province
-		
+
 		# end of wuw
 
 		### NCNS Variables
@@ -1181,7 +1181,7 @@ values = {
 
 		###  TO be sorted
 		### global
-		### An array of controller countries for each province. In this case, the province ID serves as the index: the controller of province 1234 is province_controllers^1234. 
+		### An array of controller countries for each province. In this case, the province ID serves as the index: the controller of province 1234 is province_controllers^1234.
 		province_controllers
 		### Same but with scoping to a specific province - returns country tag
 		province_controllers^enum[provinces]
@@ -1192,32 +1192,32 @@ values = {
 		### The current daily change in the value of the balance of power. Can be targeted @ITA_power_balance
 		power_balance_daily_change
 		power_balance_daily_change@<balance_of_power>
-		### The current weekly change in the value of the balance of power. 
+		### The current weekly change in the value of the balance of power.
 		power_balance_weekly_change
 		power_balance_weekly_change@<balance_of_power>
 		### check amount of gained career points
 		num_of_career_profile_points
-		### Maximum fuel of country in thousands. 
+		### Maximum fuel of country in thousands.
 
 		### country scoped
 		max_fuel_k
-		### The number of upgrade done in the intelligence agency. 
+		### The number of upgrade done in the intelligence agency.
 		agency_upgrade_number
-		### The current weekly change in power balance. 
+		### The current weekly change in power balance.
 		power_balance_weekly
-		### Air experience that the country has. 
+		### Air experience that the country has.
 		air_experience
-		### The remaining amount of days for a completed decision before it gets removed. 
+		### The remaining amount of days for a completed decision before it gets removed.
 		days_decision_timeout@<decision.timed>
-		### The malus from bombing towards war support on the scale from 0 to 1. 
+		### The malus from bombing towards war support on the scale from 0 to 1.
 		has_bombing_war_support
-		##The current daily change in power balance. 
+		##The current daily change in power balance.
 		power_balance_daily
-		### Amount of supply nodes. 
+		### Amount of supply nodes.
 		num_of_supply_nodes
-		### The malus from casualties towards war support on the scale from 0 to 1. 
+		### The malus from casualties towards war support on the scale from 0 to 1.
 		has_casualties_war_support
-		### The malus from sunk convoys towards war support on the scale from 0 to 1. 
+		### The malus from sunk convoys towards war support on the scale from 0 to 1.
 		has_convoys_war_support
 		### returns an array with the currently hired high command of the country
 		high_command
@@ -1227,7 +1227,7 @@ values = {
 		longest_war_length
 
 		### unit_leader_scoped
-		### Number of order groups assigned to the unit leader. 
+		### Number of order groups assigned to the unit leader.
 		num_orders_groups
 
 
@@ -1260,6 +1260,18 @@ values = {
 
 		## bandaid constants for variables
 		constant:<script_constant>.enum[constant_one]
-		constant:<script_constant>.enum[constant_two]		
+		constant:<script_constant>.enum[constant_two]
 	}
+}
+
+unions = {
+    union[variables_union] = {
+        single_alias_right[math_expression]
+        mtth:<mtth>
+        value[variable]
+        value[constant]
+        variable_field
+        scope_field
+        scalar
+    }
 }

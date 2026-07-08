@@ -9,6 +9,7 @@ types = {
 		skip_root_key = { ideas any }
         localisation = {
             subtype[!hidden] = {
+                name = name
                 name = $|$idea
                 desc = $_desc|$idea
             }

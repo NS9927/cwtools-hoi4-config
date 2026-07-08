@@ -2,11 +2,7 @@
 ## scope = any
 alias[trigger:set_temp_variable] = {
 	## cardinality = 1..2
-	value_set[variable] = variable_field
-	## cardinality = 1..2
-	value_set[variable] = single_alias_right[math_expression]
-	## cardinality = 1..2
-	value_set[variable] = scope_field
+	value_set[variable] = union[variables_union]
 	## cardinality = 1..2
 	value_set[variable] = token:<ideology>
 	## cardinality = 1..2
@@ -38,8 +34,7 @@ alias[trigger:set_temp_variable] = {
 ## scope = any
 alias[trigger:set_temp_variable] = {
 	var = value_set[variable]
-	value = variable_field
-	value = single_alias_right[math_expression]
+	value = union[variables_union]
 	value = scope_field
 	value = token:<ideology>
 	value = token:<ideology>_subtype
@@ -100,30 +95,24 @@ alias[trigger:randomize_temp_variable] = {
 	distribution = uniform
 	distribution = binomial
 	## cardinality = 0..1
-	min = variable_field
+	min = union[variables_union]
 	## cardinality = 0..1
-	min = single_alias_right[math_expression]
+	max = union[variables_union]
 	## cardinality = 0..1
-	max = variable_field
-	## cardinality = 0..1
-	max = single_alias_right[math_expression]
-	## cardinality = 0..1
-	lambda = variable_field
-	## cardinality = 0..1
-	lambda = single_alias_right[math_expression]
+	lambda = union[variables_union]
 }
 
 ###Modulos a temp variable with another.
 ## scope = { any }
 alias[trigger:modulo_temp_variable] = {
-	value_set[variable] = variable_field
+	value_set[variable] = union[variables_union]
 }
 
 ###Mdulos a temp variable with another.
 ## scope = { any }
 alias[trigger:modulo_temp_variable] = {
 	var = value_set[variable]
-	value = variable_field
+	value = union[variables_union]
 }
 
 ###Sets a temp variable to a random value.
@@ -135,13 +124,9 @@ alias[trigger:set_temp_variable_to_random] = value_set[variable]
 alias[trigger:set_temp_variable_to_random] = {
 	var = value_set[variable]
 	## cardinality = 0..1
-	min = variable_field
+	min = union[variables_union]
 	## cardinality = 0..1
-	min = single_alias_right[math_expression]
-	## cardinality = 0..1
-	max = variable_field
-	## cardinality = 0..1
-	max = single_alias_right[math_expression]
+	max = union[variables_union]
 	## cardinality = 0..1
 	integer = bool
 }
@@ -151,9 +136,9 @@ alias[trigger:set_temp_variable_to_random] = {
 alias[trigger:clamp_temp_variable] = {
 	var = value_set[variable]
 	## cardinality = 0..1
-	min = variable_field
+	min = union[variables_union]
 	## cardinality = 0..1
-	max = variable_field
+	max = union[variables_union]
 }
 
 ### Rounds a temporary variable.

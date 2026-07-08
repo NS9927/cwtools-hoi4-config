@@ -680,7 +680,7 @@ alias[effect:remove_ideas] = {
 	<idea>
 	## cardinality = 0..inf
 	value[advisor_token]
-	## cardinality = 0..inf	
+	## cardinality = 0..inf
 	value[variable]
 }
 
@@ -1290,28 +1290,16 @@ alias[effect:create_wargoal] = {
 
 ### Add state claim by country.
 ## scope = state
-alias[effect:add_claim_by] = scope[country]
-### Add state claim by country.
-## scope = state
 alias[effect:add_claim_by] = enum[country_tags]
 
-### Removes state claim by country.
-## scope = state
-alias[effect:remove_claim_by] = scope[country]
 ### Removes state claim by country.
 ## scope = state
 alias[effect:remove_claim_by] = enum[country_tags]
 
 ### Add state as core of country.
 ## scope = state
-alias[effect:add_core_of] = scope[country]
-### Add state as core of country.
-## scope = state
 alias[effect:add_core_of] = enum[country_tags]
 
-### Removes state as core of country.
-## scope = state
-alias[effect:remove_core_of] = scope[country]
 ### Removes state as core of country.
 ## scope = state
 alias[effect:remove_core_of] = enum[country_tags]
@@ -2212,7 +2200,7 @@ alias[effect:set_war_support] = variable_field[0..1]
 
 ### Executes children effects on random unit leader that fulfills the "limit" trigger.
 ## scope = country
-## push_scope = { unit_leader character } 
+## push_scope = { unit_leader character }
 alias[effect:random_unit_leader] = single_alias_right[random_effect_clause]
 
 
@@ -3707,8 +3695,8 @@ alias[effect:add_ai_strategy] = {
 	## cardinality = 0..inf
 	tag = scope[country]
 	### Target a state. Can specify multiple.
-	## cardinality = 0..inf	
-	state = <state>		
+	## cardinality = 0..inf
+	state = <state>
 	### Target a strategic region. Can specify multiple.
 	## cardinality = 0..inf
 	strategic_region = <strategic_region>
@@ -3733,7 +3721,7 @@ alias[effect:add_ai_strategy] = {
 	## cardinality = 0..1
 	ratio = float
 	### Factor for the normal priority. 40 means +40 %, -60 means -60 %.
-	value = int	
+	value = int
 }
 
 ### Adds strategy entry to country AI.
@@ -3744,8 +3732,8 @@ alias[effect:add_ai_strategy] = {
 	## cardinality = 0..inf
 	tag = scope[country]
 	### Target a state. Can specify multiple.
-	## cardinality = 0..inf	
-	state = <state>		
+	## cardinality = 0..inf
+	state = <state>
 	### Target a strategic region. Can specify multiple.
 	## cardinality = 0..inf
 	strategic_region = <strategic_region>
@@ -3767,7 +3755,7 @@ alias[effect:add_ai_strategy] = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
 	### Factor for the normal priority. 40 means +40 %, -60 means -60 %.
-	value = int	
+	value = int
 }
 
 ### Adds strategy entry to country AI.

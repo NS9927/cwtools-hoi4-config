@@ -4,98 +4,95 @@ types = {
 		path = "game/common/characters"
 		path_strict = yes
 		skip_root_key = any
+        localisation = {
+            name = name
+        }
 		subtype[instanced] = {
 			## cardinality = ~1..inf
-			instance = {
-
-			}
+			instance = {}
 		}
-		## only_if_not = { instanced }
-		subtype[uninstanced] = {
-
-		}
+		subtype[uninstanced] = {}
 		subtype[country_leader] = {
 			## cardinality = 1..inf
-			country_leader = {
-
-			}
+			country_leader = {}
 		}
 		subtype[country_leader] = {
 			## cardinality = ~1..inf
 			instance = {
 				## cardinality = 1..inf
-				country_leader = {
-				}
+				country_leader = {}
 			}
 		}
-		## only_if_not = { field_marshal navy_leader }
 		subtype[corps_commander] = {
-			corps_commander = {
-
-			}
+			corps_commander = {}
         }
-		## only_if_not = { field_marshal navy_leader }
 		subtype[corps_commander] = {
 			## cardinality = ~1..inf
 			instance = {
-				corps_commander = {
-
-				}
+				corps_commander = {}
 			}
         }
-		## only_if_not = { corps_commander navy_leader }
 		subtype[field_marshal] = {
-			field_marshal = {
-
-			}
+			field_marshal = {}
 		}
-		## only_if_not = { corps_commander navy_leader }
 		subtype[field_marshal] = {
 			## cardinality = ~1..inf
 			instance = {
-				field_marshal = {
-				}
+				field_marshal = {}
 			}
 		}
-		## only_if_not = { corps_commander field_marshal }
 		subtype[navy_leader] = {
-			navy_leader = {
-
-			}
+			navy_leader = {}
 		}
-		## only_if_not = { corps_commander field_marshal }
 		subtype[navy_leader] = {
 			## cardinality = ~1..inf
 			instance = {
-				navy_leader = {
-				}
+				navy_leader = {}
 			}
 		}
 		subtype[advisor] = {
 			## cardinality = 1..inf
-			advisor = {
-
-			}
+			advisor = {}
 		}
 		subtype[scientist] = {
 			## cardinality = 1..inf
-			scientist = {
-
-			}
+			scientist = {}
 		}
 		subtype[advisor] = {
 			## cardinality = ~1..inf
 			instance = {
 				## cardinality = 1..inf
-				advisor = {
-				}
+				advisor = {}
 			}
 		}
 	}
 }
 
 character = {
-
+    name = localisation
+    gender = enum[gender]
+    portraits = {
+        ## cardinality = 0..1
+        civilian = {
+            ## cardinality = 0..1
+            large = <sprite>
+            ## cardinality = 0..1
+            small = <sprite>
+        }
+        ## cardinality = 0..1
+        army = {
+            ## cardinality = 0..1
+            large = <sprite>
+            ## cardinality = 0..1
+            small = <sprite>
+        }
+        navy = {
+            ## cardinality = 0..1
+            large = <sprite>
+            ## cardinality = 0..1
+            small = <sprite>
+        }
+    }
 	subtype[uninstanced] = {
 		### Should have at least one portrait defined
 		portraits = {
@@ -124,13 +121,13 @@ character = {
 		gender = undefined
 	}
 	subtype[country_leader] = {
-		## cardinality = 1..inf
+		## cardinality = 0..inf
 		country_leader = {
 			ideology = <sub_ideology>
 			## cardinality = 0..1
 			desc = localisation
 			## cardinality = 0..1
-			expire = datetime_field
+			expire = date_field[y.m.d.h]
 			## cardinality = 0..1
 			name = localisation
 			### Sets starting traits for this leader.
@@ -146,9 +143,10 @@ character = {
 			}
 			## cardinality = 0..1
 			enum[character_ids] = value_set[country_leader_ids]
+            ## cardinality = 0..1
+            enum[character_ids] = -1
 		}
 	}
-
 	subtype[corps_commander] = {
 		corps_commander = {
 			## cardinality = 0..1
@@ -167,6 +165,8 @@ character = {
 			logistics_skill = int
 			## cardinality = 0..1
 			enum[character_ids] = value_set[unit_leader_ids]
+            ## cardinality = 0..1
+            enum[character_ids] = -1
 			## cardinality = 0..1
 			name = localisation
 			### Sets starting traits for this leader.
@@ -201,6 +201,8 @@ character = {
 			logistics_skill = int
 			## cardinality = 0..1
 			enum[character_ids] = value_set[unit_leader_ids]
+            ## cardinality = 0..1
+            enum[character_ids] = -1
 			### Sets starting traits for this leader.
 			## cardinality = 0..1
 			traits = {
@@ -233,6 +235,8 @@ character = {
 			coordination_skill = int
 			## cardinality = 0..1
 			enum[character_ids] = value_set[unit_leader_ids]
+            ## cardinality = 0..1
+            enum[character_ids] = -1
 			## cardinality = 0..1
 			name = localisation
 			### Sets starting traits for this leader.
@@ -250,7 +254,7 @@ character = {
 		}
 	}
 	subtype[advisor] = {
-		## cardinality = 1..inf
+		## cardinality = 0..inf
 		advisor = {
 			slot = value[character_advisor_slot]
 			## cardinality = 0..1
@@ -426,6 +430,8 @@ character = {
 				logistics_skill = int
 				## cardinality = 0..1
 				enum[character_ids] = value_set[unit_leader_ids]
+                ## cardinality = 0..1
+                enum[character_ids] = -1
 				## cardinality = 0..1
 				name = localisation
 				### Sets starting traits for this leader.
@@ -494,6 +500,8 @@ character = {
 				coordination_skill = int
 				## cardinality = 0..1
 				enum[character_ids] = value_set[unit_leader_ids]
+                ## cardinality = 0..1
+                enum[character_ids] = -1
 				## cardinality = 0..1
 				name = localisation
 				### Sets starting traits for this leader.
