@@ -874,10 +874,6 @@ alias[trigger:num_of_controlled_states] = variable_field
 
 ### Checks if the current scope was ever the specified country.
 ## scope = { country combat }
-alias[trigger:original_tag] = scope[country]
-
-### Checks if the current scope was ever the specified country.
-## scope = { country combat }
 alias[trigger:original_tag] = enum[country_tags]
 
 ### Compare if the country has added above or below the specified ammount of tension.
