@@ -17,13 +17,13 @@ mod_descriptor = {
     version = scalar
     #### Mod thumbnail picture.
     ## cardinality = 0..1
-    ## file_extensions = { png dds }
+    ## file_extensions = { png dds gif }
     picture = filepath
     #### Mod tags.
     ## cardinality = 0..1
     tags = {
-        ## cardinality = 0..inf
-        scalar
+        ## cardinality = 0..10
+        enum[mod_tags]
     }
     ## cardinality = 0..1
     dependencies = {
@@ -35,10 +35,30 @@ mod_descriptor = {
     ####
     #### Use one of `remote_file_id` and `path`.
     ## cardinality = 0..1
-    remote_file_id = scalar
+    remote_file_id = int
     ### Absolute directory path or absolute zip file path.
     ###
     ### Use one of `remote_file_id` and `path`.
     ## cardinality = 0..1
     path = abs_filepath
+}
+
+enums = {
+    enum[mod_tags] = {
+        "Alternative History"
+        "Balance"
+        "Events"
+        "Fixes"
+        "Gameplay"
+        "Graphics"
+        "Historical"
+        "Ideologies"
+        "Map"
+        "Military"
+        "National Focuses"
+        "Sounds"
+        "Technologies"
+        "Translations"
+        "Utilities"
+    }
 }
