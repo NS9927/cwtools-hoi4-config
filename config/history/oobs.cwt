@@ -47,7 +47,7 @@ single_alias[division_template_clause] = {
 	## cardinality = 0..1
 	is_fake_intel_division = bool
 	## cardinality = 0..1
-	foreign_template_tag = scope[country] # Country tag
+	foreign_template_tag = enum[country_tags] # Country tag
 	## cardinality = 0..1
 	origin_type = subject
 }
@@ -68,7 +68,7 @@ oob = {
 
 	## cardinality = 0..inf
 	create_colonial_division_template = {
-		subject = scope[country] # Country tag
+		subject = enum[country_tags] # Country tag
 		division_template = single_alias_right[division_template_clause]
 	}
 
@@ -143,7 +143,7 @@ oob = {
 				army_manpower_value = {
 					## cardinality = ~1..inf
 					value = {
-						tag = scope[country]
+						tag = enum[country_tags]
 						value = int_variable_field
 					}
 				}
@@ -151,7 +151,7 @@ oob = {
 				army_manpower_need = {
 					## cardinality = ~1..inf
 					value = {
-						tag = scope[country]
+						tag = enum[country_tags]
 						value = int_variable_field
 					}
 				}

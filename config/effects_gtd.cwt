@@ -24,7 +24,7 @@ alias[effect:every_scientist] = single_alias_right[every_effect_clause]
 ### Create a colonial division template for overlord/owner. Available parameters are subject and division_template, where the subject parameter is the country tag for an overlords subject. And the division_template is the regular effect to create a division template.
 ## scope = country
 alias[effect:create_colonial_division_template] = {
-    subject = scope[country] # Country tag
+    subject = enum[country_tags] # Country tag
 	division_template = single_alias_right[division_template_clause]
 }
 
@@ -137,7 +137,7 @@ alias[effect:add_equipment_bonus] = {
 
 ### Adds a contested owner to a state. The effect can be used either from a country or a state scope and accepts the other as parameter.
 ## scope = state
-alias[effect:add_contested_owner] = scope[country]
+alias[effect:add_contested_owner] = enum[country_tags]
 ### Adds a contested owner to a state. The effect can be used either from a country or a state scope and accepts the other as parameter.
 ## scope = country
 alias[effect:add_contested_owner] = scope[state]
@@ -187,7 +187,7 @@ alias[effect:generate_scientist_character] = {
 	## cardinality = 0..1
     portrait = GFX_portrait # optional - random portrait by default
 	## cardinality = 0..1
-    portrait_tag_override = scope[country] # optional - accepts variable and keyword - only relevant if using random portrait - by default use country in scope
+    portrait_tag_override = enum[country_tags] # optional - accepts variable and keyword - only relevant if using random portrait - by default use country in scope
 	## cardinality = 0..1
     gender = enum[gender] # optional - by default random gender
 	## cardinality = 0..1
@@ -201,7 +201,6 @@ alias[effect:generate_scientist_character] = {
 	## cardinality = 0..1
     traits = { <scientist_trait> } # optional array
 }
-
 
 ### Add scientist role to a character. The character can come from the scope or from an input parameter. The scientist role format is the same as in the character DB. Except the visible trigger - a scientist role created via effect cannot have triggers.
 ## scope = country
@@ -312,7 +311,7 @@ alias[effect:store_ref] = scalar
 
 ### Removes a contested owner to a state. The effect can be used either from a country or a state scope and accepts the other as parameter.
 ## scope = state
-alias[effect:remove_contested_owner] = scope[country]
+alias[effect:remove_contested_owner] = enum[country_tags]
 ### Removes a contested owner to a state. The effect can be used either from a country or a state scope and accepts the other as parameter.
 ## scope = country
 alias[effect:remove_contested_owner] = scope[state]
@@ -323,8 +322,6 @@ alias[effect:add_project_progress_ratio] = float[-1.0..1.0]
 ### Add progress to the project's prototype phase. nThe input value is a ratio of the total needed progress to complete the special project, i.e. a decimal number between -1 and 1.
 ## scope = project
 alias[effect:add_project_progress_ratio] = value[variable]
-
-
 
 ### Executes the provided effects but with a custom tooltip surpressing all tooltips from all other effects inside this block. The custom tooltip is a [bindable localization]
 ## scope = any

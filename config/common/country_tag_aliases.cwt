@@ -39,7 +39,7 @@ country_tag_alias = {
 			## cardinality = 0..inf
 			variable_field
 			## cardinality = 0..inf
-			scope[country]
+			enum[country_tags]
 		}
 		## cardinality = 0..1
 		target_array = single_alias_right[array]

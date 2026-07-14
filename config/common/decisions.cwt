@@ -362,7 +362,6 @@ decision = {
 		highlight_color_while_active = int
 	}
 
-
 	## cardinality = 0..1
 	highlight_color_before_active = int
 	## cardinality = 0..1
@@ -468,8 +467,6 @@ decision = {
 		## cardinality = 0..1
 		targets = {
 			## cardinality = 0..inf
-			scope[country]
-			## cardinality = 0..inf
 			enum[country_tags]
 			## cardinality = 0..inf
 			value[variable]
@@ -521,9 +518,6 @@ decision = {
 		## cardinality = 0..1
 		target_non_existing = bool
 	}
-
-	## cardinality = 0..inf
-	enum[war_with_on] = scope[country]
 
 	## cardinality = 0..inf
 	enum[war_with_on] = enum[country_tags]

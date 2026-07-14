@@ -26,26 +26,26 @@ special_project = {
 		## cardinality = 0..1
 		always = bool
 		## cardinality = 0..inf
-		tag = scope[country]
+		tag = enum[country_tags]
 		## cardinality = 0..inf
-		original_tag = scope[country]
+		original_tag = enum[country_tags]
 		## cardinality = 0..inf
 		has_dlc = enum[dlc]
 		## cardinality = 0..inf
 		NOT = {
 			## cardinality = 0..inf
-			tag = scope[country]
+			tag = enum[country_tags]
 			## cardinality = 0..inf
-			original_tag = scope[country]
+			original_tag = enum[country_tags]
 			## cardinality = 0..inf
 			has_dlc = enum[dlc]
 		}
 		## cardinality = 0..inf
 		AND = {
 			## cardinality = 0..inf
-			tag = scope[country]
+			tag = enum[country_tags]
 			## cardinality = 0..inf
-			original_tag = scope[country]
+			original_tag = enum[country_tags]
 			## cardinality = 0..inf
 			has_dlc = enum[dlc]
 		}
@@ -218,9 +218,6 @@ special_project = {
 	### Bonus given when the Project is fully researched (i.e. at the end of the last Prototyping phase)
 	## cardinality = 0..1
 	project_output = single_alias_right[sp_iteration_output]
-
-
-	#### PROTOTYPES
 
 	### - see **game/common/special_projects/prototype_rewards**
 	### - "Generic rewards" are coming from the prototype reward DB and can be used in several projects

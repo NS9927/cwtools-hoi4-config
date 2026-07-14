@@ -50,11 +50,6 @@ peace_ai_desires = {
     peace_action_type = { take_states force_government liberate }
     peace_action_type = { puppet force_government liberate }
     peace_action_type = { take_states puppet force_government liberate }
-    ### ROOT - Negotiator country (who is doing the negotiation)
-    ### FROM - Taker country (who will be the owner after the conference)
-    ### FROM.FROM - Giver country (who was the owner before the conference)
-    ### FROM.FROM.FROM - State (iff peace action refers to a state)
-    ### You might have to use e.g. ROOT.FROM to access the variable from inside another scope
     # ROOT.FROM.FROM.FROM = state 
     # ROOT.FROM = country
     # ROOT.FROM.FROM = country
@@ -101,11 +96,6 @@ peace_action_modifiers = {
     
     peace_action_type = { take_states puppet force_government liberate take_navy }
     subtype[enable] = {
-        ### ROOT - Negotiator country (who is doing the negotiation)
-        ### FROM - Taker country (who will be the owner after the conference)
-        ### FROM.FROM - Giver country (who was the owner before the conference)
-        ### FROM.FROM.FROM - State (iff peace action refers to a state)
-        ### You might have to use e.g. ROOT.FROM to access the variable from inside another scope
         # ROOT.FROM.FROM.FROM = state 
         # ROOT.FROM = country
         # ROOT.FROM.FROM = country
@@ -156,9 +146,6 @@ alias[trigger:c_is_untouched_loser] = bool
 ### Checks if the current scope is on the same side of the peace conference as the specified country.
 ## scope = country
 alias[trigger:pc_is_on_same_side_as] = enum[country_tags]
-### Checks if the current scope is on the same side of the peace conference as the specified country.
-## scope = country
-alias[trigger:pc_is_on_same_side_as] = scope[country]
 
 ### Checks if the current scope has been liberated within the peace conference.
 ## scope = country
@@ -167,9 +154,6 @@ alias[trigger:pc_is_liberated] = bool
 ### Checks if the current scope has been liberated within the peace conference by the specified country.
 ## scope = country
 alias[trigger:pc_is_liberated_by] = enum[country_tags]
-### Checks if the current scope has been liberated within the peace conference by the specified country.
-## scope = country
-alias[trigger:pc_is_liberated_by] = scope[country]
 
 ### Checks if the current scope has been puppeted within the peace conference.
 ## scope = country
@@ -178,9 +162,6 @@ alias[trigger:pc_is_puppeted] = bool
 ### Checks if the current scope has been puppeted within the peace conference by the specified country.
 ## scope = country
 alias[trigger:pc_is_puppeted_by] = enum[country_tags]
-### Checks if the current scope has been puppeted within the peace conference by the specified country.
-## scope = country
-alias[trigger:pc_is_puppeted_by] = scope[country]
 
 ### Checks if the current scope has had an enforced government change within the peace conference.
 ## scope = country
@@ -189,9 +170,6 @@ alias[trigger:pc_is_forced_government] = bool
 ### Checks if the current scope has had an enforced government change within the peace conference demanded by the specified country.
 ## scope = country
 alias[trigger:pc_is_forced_government_by] = enum[country_tags]
-### Checks if the current scope has had an enforced government change within the peace conference demanded by the specified country.
-## scope = country
-alias[trigger:pc_is_forced_government_by] = scope[country]
 
 ### Checks if the current scope has had an enforced government change to the specified ideology group.
 ## scope = country
@@ -207,4 +185,4 @@ alias[trigger:pc_current_score] = int_variable_field
 
 ### Check if state is claimed with a take_states action in conference for TAG. Example: pc_is_state_claimed_and_taken_by = SOV/ROOT/ROOT.FROM"
 ## scope = state
-alias[trigger:pc_is_state_claimed_and_taken_by] = scope[country]
+alias[trigger:pc_is_state_claimed_and_taken_by] = enum[country_tags]

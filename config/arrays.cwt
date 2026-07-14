@@ -61,6 +61,6 @@ values = {
 }
 
 alias[array:value_array] = value[array]
-alias[array:scope_array] = scope[country].value[array]
+alias[array:scope_array] = enum[country_tags].value[array]
 
 single_alias[array] = value[array]

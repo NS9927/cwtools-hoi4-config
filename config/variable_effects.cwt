@@ -99,13 +99,13 @@ alias[effect:randomize_variable] = {
 ###Modulos a variable with another.
 ## scope = { any }
 alias[effect:modulo_variable] = {
-	scope[country].value[variable] = union[variables_union]
+	enum[country_tags].value[variable] = union[variables_union]
 }
 
 ###Modulos a variable with another.
 ## scope = { any }
 alias[effect:modulo_variable] = {
-	var = scope[country].value[variable]
+	var = enum[country_tags].value[variable]
 	value = union[variables_union]
 }
 

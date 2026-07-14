@@ -24,10 +24,6 @@ alias[trigger:resistance] = variable_field
 
 ###Checks if a country has a captured an operative (supports scoped variables).
 ## scope = { COUNTRY }
-alias[trigger:has_captured_operative] = scope[country]
-
-###Checks if a country has a captured an operative (supports scoped variables).
-## scope = { COUNTRY }
 alias[trigger:has_captured_operative] = enum[country_tags]
 
 ###Checks if a country has a captured an operative (supports scoped variables).
@@ -61,10 +57,6 @@ alias[trigger:resistance_speed] = variable_field
 ## scope = { STATE }
 alias[trigger:occupied_country_tag] = enum[country_tags]
 
-###Compares occupied country that creates resistance to a tag.
-## scope = { STATE }
-alias[trigger:occupied_country_tag] = scope[country]
-
 ###Compares the target resistance level of a state to a value.
 ## scope = { STATE }
 alias[trigger:resistance_target] = variable_field
@@ -89,7 +81,6 @@ alias[trigger:is_debug] = bool
 ## scope = { COUNTRY }
 alias[trigger:core_compliance] = {
 	occupied_country_tag = enum[country_tags]
-	occupied_country_tag = scope[country]
 	value = variable_field
 }
 
@@ -97,7 +88,6 @@ alias[trigger:core_compliance] = {
 ## scope = { COUNTRY }
 alias[trigger:core_resistance] = {
 	occupied_country_tag = enum[country_tags]
-	occupied_country_tag = scope[country]
 	value = variable_field
 }
 
@@ -105,7 +95,6 @@ alias[trigger:core_resistance] = {
 ## scope = { COUNTRY }
 alias[trigger:network_strength] = {
 	target = enum[country_tags]
-	target = scope[country]
 	## cardinality = 0..1
 	state = <state>
 	## cardinality = 0..1
@@ -124,7 +113,6 @@ alias[trigger:network_strength] = {
 ###Checks if a country has a specific token against another country.
 ## scope = { COUNTRY }
 alias[trigger:has_operation_token] = {
-	tag = scope[country]
 	tag = enum[country_tags]
 	token = <operation_token>
 }
@@ -132,10 +120,6 @@ alias[trigger:has_operation_token] = {
 ###Checks occupation law of state.
 ## scope = { STATE }
 alias[trigger:occupation_law] = <occupation_law>
-
-###Checks if a country is ally with another country. Will check if two countries are same/in same faction/has subject master relation.
-## scope = { COUNTRY }
-alias[trigger:is_ally_with] = scope[country]
 
 ###Checks if a country is ally with another country. Will check if two countries are same/in same faction/has subject master relation.
 ## scope = { COUNTRY }
@@ -163,7 +147,6 @@ alias[trigger:get_sorted_scored_countries_temp] = {
 ## scope = { COUNTRY }
 alias[trigger:decryption_progress] = {
 	target = enum[country_tags]
-	target = scope[country]
 	value = variable_field
 }
 
@@ -181,7 +164,6 @@ alias[trigger:all_occupied_country] = single_alias_right[any_all_trigger_clause]
 ## scope = { any }
 alias[trigger:any_country_with_original_tag] = {
 	original_tag_to_check = enum[country_tags]
-	original_tag_to_check = scope[country]
     ## cardinality = 0..1
     count = int_variable_field
 	## cardinality = 0..1
@@ -189,12 +171,10 @@ alias[trigger:any_country_with_original_tag] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
-
 ###Check if all country with current scope's original tag meets the trigger.
 ## scope = { any }
 alias[trigger:all_country_with_original_tag] = {
 	original_tag_to_check = enum[country_tags]
-	original_tag_to_check = scope[country]
 	## cardinality = 0..1
 	tooltip = localisation
 	alias_name[trigger] = alias_match_left[trigger]
@@ -228,7 +208,6 @@ alias[trigger:operative_leader_mission] = enum[operative_missions]
 ## scope = { COUNTRY }
 alias[trigger:compare_intel_with] = {
 	target = enum[country_tags]
-	target = scope[country]
 	## cardinality = 0..1
 	civilian_intel = variable_field
 	## cardinality = 0..1
@@ -257,7 +236,6 @@ alias[trigger:is_operative_captured] = bool
 ## scope = { COUNTRY }
 alias[trigger:intel_level_over] = {
 	target = enum[country_tags]
-	target = scope[country]
 	## cardinality = 0..1
 	civilian_intel = variable_field
 	## cardinality = 0..1
@@ -294,23 +272,11 @@ alias[trigger:is_cryptology_department_active] = bool
 
 ###Checks if is currently decrypting a cipher.
 ## scope = { COUNTRY }
-alias[trigger:is_decrypting] = scope[country]
-
-###Checks if is currently decrypting a cipher.
-## scope = { COUNTRY }
 alias[trigger:is_decrypting] = enum[country_tags]
 
 ###Checks if fully decrypted a cipher.
 ## scope = { COUNTRY }
-alias[trigger:is_fully_decrypted] = scope[country]
-
-###Checks if fully decrypted a cipher.
-## scope = { COUNTRY }
 alias[trigger:is_fully_decrypted] = enum[country_tags]
-
-###Checks if the country activated their active cipher decryption bonuses.
-## scope = { COUNTRY }
-alias[trigger:is_active_decryption_bonuses_enabled] = scope[country]
 
 ###Checks if the country activated their active cipher decryption bonuses.
 ## scope = { COUNTRY }
@@ -335,7 +301,7 @@ alias[trigger:all_guaranteed_country] = single_alias_right[any_all_trigger_claus
 alias[trigger:num_finished_operations] = {
 	operation = <operation>
 	operation = value_set[token]
-	target = scope[country]
+	target = enum[country_tags]
 	value = int
 
 }
@@ -343,7 +309,6 @@ alias[trigger:num_finished_operations] = {
 ###Checks the collaboration in a target country with our currently scoped country.
 ## scope = { COUNTRY }
 alias[trigger:has_collaboration] = {
-	target = scope[country]
 	target = enum[country_tags]
 	value = variable_field
 }
@@ -351,14 +316,14 @@ alias[trigger:has_collaboration] = {
 ###Checks if running a specific operation. Operation can be omitted to check for any operation.
 ## scope = { COUNTRY }
 alias[trigger:is_running_operation] = {
-	target = scope[country]
+	target = enum[country_tags]
 	operation = <operation>
 }
 
 ###Checks if finished collecting of resources for an operation.
 ## scope = { COUNTRY }
 alias[trigger:has_finished_collecting_for_operation] = {
-	target = scope[country]
+	target = enum[country_tags]
 	operation = <operation>
 }
 
@@ -383,7 +348,7 @@ alias[trigger:is_operation_type] = <operation>
 alias[trigger:is_preparing_operation] = {
 	operation = <operation>
 	operation = variable_field
-	target = scope[country]
+	target = enum[country_tags]
 }
 
 ###Checks whether the operative is performing the given operation.
@@ -392,15 +357,7 @@ alias[trigger:operative_leader_operation] = <operation>
 
 ###Checks if the country could potentially declare a war on the target (according to game rules, relationship, etc... ).
 ## scope = { COUNTRY }
-alias[trigger:can_declare_war_on] = scope[country]
-
-###Checks if the country could potentially declare a war on the target (according to game rules, relationship, etc... ).
-## scope = { COUNTRY }
 alias[trigger:can_declare_war_on] = enum[country_tags]
-
-###Checks whether the operative has the specified nationality. NOTE: this is invalid on non-operatives.
-## scope = { operative }
-alias[trigger:has_nationality] = scope[country]
 
 ###Checks whether the operative has the specified nationality. NOTE: this is invalid on non-operatives.
 ## scope = { operative }
@@ -410,7 +367,6 @@ alias[trigger:has_nationality] = enum[country_tags]
 ## scope = { COUNTRY }
 alias[trigger:network_national_coverage] = {
 	target = enum[country_tags]
-	target = scope[country]
 	value = variable_field
 }
 
@@ -447,15 +403,7 @@ alias[trigger:has_allowed_idea_with_traits] = {
 
 ###Is leading volunteers in the target.
 ## scope = { UNIT_LEADER character }
-alias[trigger:is_leading_volunteer_group] = scope[country]
-
-###Is leading volunteers in the target.
-## scope = { UNIT_LEADER character }
 alias[trigger:is_leading_volunteer_group] = enum[country_tags]
-
-###Is leading volunteers in a country with the original tag.
-## scope = { UNIT_LEADER character }
-alias[trigger:is_leading_volunteer_group_with_original_country] = scope[country]
 
 ###Is leading volunteers in a country with the original tag.
 ## scope = { UNIT_LEADER character }
@@ -490,9 +438,6 @@ alias[trigger:debug_math_expr] = single_alias_right[math_expression]
 ###Checks if the scoped country has any unit leader captured by the target country.
 ## scope = { country }
 alias[trigger:has_any_general_captured_by] = enum[country_tags]
-###Checks if the scoped country has any unit leader captured by the target country.
-## scope = { country }
-alias[trigger:has_any_general_captured_by] = scope[country]
 
 ###Checks if the scoped unit leader is captured.
 ## scope = { character unit_leader }

@@ -191,9 +191,6 @@ focus = {
     bypass_if_unavailable = no
 
     ## cardinality = 0..inf
-    will_lead_to_war_with = scope[country]
-
-    ## cardinality = 0..inf
     will_lead_to_war_with = enum[country_tags]
 
     ## cardinality = 0..inf
@@ -488,9 +485,6 @@ shared_focus = {
 	bypass_if_unavailable = no
 
 	## cardinality = 0..inf
-	will_lead_to_war_with = scope[country]
-
-	## cardinality = 0..inf
 	will_lead_to_war_with = enum[country_tags]
 
 	## cardinality = 0..inf
@@ -722,7 +716,6 @@ continous_focus_tree = {
 		}
 	}
 }
-
 
 style = {
 	## cardinality = 1..1

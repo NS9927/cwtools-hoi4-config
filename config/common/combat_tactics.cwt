@@ -15,7 +15,7 @@ types = {
 ## replace_scope = { this = combat root = combat from = combat }
 combat_tactic = {
 	## cardinality = 0..1
-	only_show_for = scope[country]
+	only_show_for = enum[country_tags]
 	is_attacker = bool
 	trigger = {
 		is_attacker = bool

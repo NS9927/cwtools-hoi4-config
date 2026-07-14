@@ -320,7 +320,6 @@ values = {
 		num_target_equipment_in_armies_k@<equipment>
 
 		### Opinion of a country targeted on another one. Example GER.opinion@ENG.
-		opinion@scope[country]
 		opinion@enum[country_tags]
 		opinion@ROOT
 		opinion@FROM
@@ -1055,7 +1054,6 @@ values = {
 
 		### KR-specifc variables
 		is_in_coalition_with_@token:<ideology>
-		preparing_for_war_with_scope[country]
 		preparing_for_war_with_enum[country_tags]
 
 		# ========================
@@ -1082,9 +1080,6 @@ values = {
 		### Number of unused trait points of the military industrial organization
 		number_of_unused_trait_points
 
-
-		#### wuw patch variables
-
 		### total produced equipment of typecrossing_support_vehicle
 		total_equipment_produced_crossing_support_vehicle
 
@@ -1092,15 +1087,12 @@ values = {
 		total_equipment_produced_armored_recovery_vehicle
 
 		### calculates the number of civilian factories on core states of current country scope, on those states that are under control of @Tag <Tag | ROOT | my_var> example num_of_civilian_factories_in_cores@GER
-		num_of_civilian_factories_in_cores@scope[country]
 		num_of_civilian_factories_in_cores@enum[country_tags]
 
 		### calculates the number of civilian factories on core states of current country scope, on those states that are under control of @Tag  <Tag | ROOT | my_var> example num_of_military_factories_in_cores@GER
-		num_of_military_factories_in_cores@scope[country]
 		num_of_military_factories_in_cores@enum[country_tags]
 
 		### calculates the number of civilian factories on core states of current country scope, on those states that are under control of @Tag  <Tag | ROOT | my_var> example num_of_naval_factories_in_cores@my_var
-		num_of_naval_factories_in_cores@scope[country]
 		num_of_naval_factories_in_cores@enum[country_tags]
 
 		### Total produced equipment of typesam_missile
@@ -1151,8 +1143,6 @@ values = {
 
 		# end of wuw
 
-		### NCNS Variables
-
 		### total amount of resources extracted by the world
 		global_resource_extracted_total
 		### total amount of specific resource extracted by the world, resource type is defined in target global_resource_extracted@steel
@@ -1177,13 +1167,10 @@ values = {
 		total_constructed_naval_supply_hub
 		### Total produced equipment of typesupport_ship
 		total_equipment_produced_support_ship
-		### end NCNS variables
-
 		###  TO be sorted
 		### global
 		### An array of controller countries for each province. In this case, the province ID serves as the index: the controller of province 1234 is province_controllers^1234.
 		province_controllers
-		### Same but with scoping to a specific province - returns country tag
 		province_controllers^enum[provinces]
 		### Every state that exists in the game. Array
 		states
@@ -1197,8 +1184,6 @@ values = {
 		power_balance_weekly_change@<balance_of_power>
 		### check amount of gained career points
 		num_of_career_profile_points
-		### Maximum fuel of country in thousands.
-
 		### country scoped
 		max_fuel_k
 		### The number of upgrade done in the intelligence agency.
@@ -1229,7 +1214,6 @@ values = {
 		### unit_leader_scoped
 		### Number of order groups assigned to the unit leader.
 		num_orders_groups
-
 
 		# ========================
 		# MODIFIER VARIABLES

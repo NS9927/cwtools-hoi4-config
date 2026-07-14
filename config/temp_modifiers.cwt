@@ -1,7 +1,6 @@
 ### Applies modifiers only in relation to a specified other country.
 ## scope = country
 alias[targeted_modifier_rule:targeted_modifier] = {
-	tag = scope[country]
 	tag = enum[country_tags]
 	## cardinality = ~1..inf
 	alias_name[modifier] = alias_match_left[modifier]
@@ -171,7 +170,6 @@ alias[air_stat:naval_strike_targetting] = float
 alias[air_stat:naval_strike_targetting_factor] = float
 alias[air_stat:thrust] = float
 alias[air_stat:night_penalty] = float
-
 
 #for terrain modifiers
 alias[unit_stat:<terrain>] = { alias_name[unit_stat] = alias_match_left[unit_stat] }

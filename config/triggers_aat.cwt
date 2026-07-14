@@ -155,8 +155,8 @@ alias[trigger:deal_completion] = float[0..1]
 
 ### Check the buyer country. Example: buyer = GER
 ## scope = purchase_contract
-alias[trigger:buyer] = scope[country]
+alias[trigger:buyer] = enum[country_tags]
 
 ### Check the seller country. Example: seller = GER
 ## scope = purchase_contract
-alias[trigger:seller] = scope[country]
+alias[trigger:seller] = enum[country_tags]
