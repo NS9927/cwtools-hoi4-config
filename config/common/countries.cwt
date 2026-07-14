@@ -73,6 +73,7 @@ country_file = {
 		}
 	}
 }
+
 enums = {
 	# country tags + country tag aliases
 	complex_enum[country_tags] = {
@@ -90,4 +91,11 @@ enums = {
 			enum_name = scalar
 		}
 	}
+}
+
+unions = {
+    union[country_tags_and_scope] = {
+        scope[country]
+        enum[country_tags]
+    }
 }

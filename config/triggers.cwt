@@ -88,7 +88,7 @@ alias[trigger:any_country] = single_alias_right[any_all_trigger_clause]
 ### Compares a variable to a number or variable.
 ## scope = any
 alias[trigger:check_variable] = {
-	var = scalar
+	var = union[variables_union]
 	## cardinality = 0..1
 	value = union[variables_union]
 	## cardinality = 0..1
@@ -187,7 +187,7 @@ alias[trigger:has_opinion_modifier] = <opinion>
 
 ### Checks if the country is subject of specified country.
 ## scope = country
-alias[trigger:is_subject_of] = enum[country_tags]
+alias[trigger:is_subject_of] = union[country_tags_and_scope]
 
 ### Check if all neighbor countries meet the trigger.
 ## scope = country

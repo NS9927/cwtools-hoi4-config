@@ -385,7 +385,7 @@ alias[gui:iconType] = {
     ### Name referenced by scripted gui
     name = value_set[iconType_name]
     name = value_set[gui_element_name]
-    ##cardinality = ~1..1
+    ##cardinality = ~0..1
     alias_name[any_image_type] = alias_match_left[any_image_type]
     alias_name[gui_image] = alias_match_left[gui_image]
     alias_name[gui_standard] = alias_match_left[gui_standard]
