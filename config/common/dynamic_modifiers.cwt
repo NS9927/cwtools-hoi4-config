@@ -33,7 +33,7 @@ dynamic_modifier = {
 	}
 
 	## cardinality = 0..inf
-	alias_keys_field[modifier] = variable_field
+	alias_keys_field[modifier] = union[variables_union]
 	## cardinality = 0..inf
 	custom_modifier_tooltip = localisation
 }
