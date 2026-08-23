@@ -5,21 +5,6 @@ types = {
 	}
 }
 
-single_alias[general_hq_template_clause] = single_alias_right[division_template_clause]
-
 general_history = {
-	## cardinality = 0..inf
-	division_template = single_alias_right[division_template_clause]
-
-	## cardinality = 0..inf
-	hq_template = single_alias_right[general_hq_template_clause]
-
-	## cardinality = 0..inf
-	union[country_tags_and_scope] = {
-		## cardinality = 0..inf
-		division_template = single_alias_right[division_template_clause]
-
-		## cardinality = 0..inf
-		hq_template = single_alias_right[general_hq_template_clause]
-	}
+    alias_name[effect] = alias_match_left[effect]
 }

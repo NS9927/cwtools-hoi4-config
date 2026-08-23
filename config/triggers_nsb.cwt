@@ -139,7 +139,6 @@ alias[trigger:has_country_leader] = {
 	character = value[variable]
 	character = value[event_target]
 	character = value[global_event_target]
-	character = scope[character]
 }
 ###Check if country has leader with specified ID. Don't localize this. Tooltip only for debug.
 ## scope = country

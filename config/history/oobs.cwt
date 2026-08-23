@@ -26,7 +26,11 @@ single_alias[division_template_clause] = {
 	obsolete = bool
 	## cardinality = 0..1
 	division_cap = int
-	regiments = {
+    ## cardinality = 0..1
+    is_army_hq = bool
+    ## cardinality = 0..1
+    localization_key = localisation
+    regiments = {
 		## cardinality = 0..25
 		<unit.line_unit> = { x = int[0..4] y = int[0..4] }
 	}
