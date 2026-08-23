@@ -408,7 +408,7 @@ alias[effect:else_if] = {
 
 ### Use after (else_)if for a catch-all case.
 alias[effect:else] = {
-    ## cardinality = ~1..1
+    ## cardinality = ~0..1
     limit = { alias_name[trigger] = alias_match_left[trigger] }
 	alias_name[effect] = alias_match_left[effect]
 }
