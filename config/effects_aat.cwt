@@ -180,7 +180,7 @@ alias[effect:set_mio_name_key] = localisation
 
 ### Set the localisation key used to generate the name of the military industrial organization in scope. The localisation key may be a scripted localisation (triggers evaluated in MIO scope)
 ## scope = military_industrial_organization
-alias[effect:set_mio_name_key] = <scripted_loc>
+alias[effect:set_mio_name_key] = <scripted_localisation>
 
 ### Set the icon GFX for the military industrial organization in scope
 ## scope = military_industrial_organization

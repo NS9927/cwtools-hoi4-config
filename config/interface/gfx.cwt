@@ -257,3 +257,10 @@ bitmapfonts = {
 		}
 	}
 }
+
+unions = {
+    union[sprite] = {
+        <sprite>
+        filepath
+    }
+}
