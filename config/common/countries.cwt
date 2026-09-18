@@ -1,73 +1,71 @@
 types = {
-	type[country_file] = {
-		path = "game/common/countries"
-		type_per_file = yes
-		subtype[country] = {
-			color = {
-			}
-		}
-		subtype[country] = {
-			graphical_culture = scalar
-		}
-		## only_if_not = { country }
-		subtype[cosmetic] = {
-		}
-	}
-	type[country_tag_file] = {
-		path = "game/common/country_tags"
-		type_per_file = yes
-	}
+    type[country_file] = {
+        path = "game/common/countries"
+        type_per_file = yes
+        subtype[country] = {
+            color = { }
+        }
+        subtype[country] = {
+            graphical_culture = scalar
+        }
+        ## only_if_not = { country }
+        subtype[cosmetic] = {
+        }
+    }
+    type[country_tag_file] = {
+        path = "game/common/country_tags"
+        type_per_file = yes
+    }
 }
 
 country_tag_file = {
-	## cardinality = 0..1
-	dynamic_tags = yes
-	## cardinality = ~1..inf
-	scalar = filepath[common/]
+    ## cardinality = 0..1
+    dynamic_tags = yes
+    ## cardinality = ~1..inf
+    scalar = filepath[common/]
 }
 
 country_file = {
-	subtype[country] = {
-		## cardinality = 0..inf
-		use_legacy_ai_pp_spend = bool
-		## cardinality = 0..inf
-		graphical_culture = scalar
-		## cardinality = 0..inf
-		graphical_culture_2d = scalar
-		color = color_field
-	}
-	subtype[cosmetic] = {
-		## cardinality = 1..inf
+    subtype[country] = {
+        ## cardinality = 0..inf
+        use_legacy_ai_pp_spend = bool
+        ## cardinality = 0..inf
+        graphical_culture = scalar
+        ## cardinality = 0..inf
+        graphical_culture_2d = scalar
+        color = color_field
+    }
+    subtype[cosmetic] = {
+        ## cardinality = 1..inf
         union[country_tags_and_scope] = {
-			color = color_field
-			## cardinality = 0..1
-			color_ui = color_field
-		}
-	}
+            color = color_field
+            ## cardinality = 0..1
+            ## color_type = rgb
+            color = {
+                ## cardinality = 3..3
+                int[0..255]
+            }
+            ## cardinality = 0..1
+            color_ui = color_field
+        }
+    }
 }
 
 enums = {
-	# country tags + country tag aliases
-	complex_enum[country_tags] = {
-		path = "game/common/country_tags"
-		start_from_root = yes
-		name = {
-			enum_name = scalar
-		}
-	}
-	# just country tags, to make sure tag aliases cannot use other aliases
-	complex_enum[explicit_country_tags] = {
-		path = "game/common/country_tags"
-		start_from_root = yes
-		name = {
-			enum_name = scalar
-		}
-	}
-}
-
-unions = {
-    union[country_tags_and_scope] = {
-        enum[country_tags]
-        scope_field
+    # country tags + country tag aliases
+    complex_enum[country_tags] = {
+        path = "game/common/country_tags"
+        start_from_root = yes
+        name = {
+            enum_name = scalar
+        }
+    }
+    # just country tags, to make sure tag aliases cannot use other aliases
+    complex_enum[explicit_country_tags] = {
+        path = "game/common/country_tags"
+        start_from_root = yes
+        name = {
+            enum_name = scalar
+        }
     }
 }
