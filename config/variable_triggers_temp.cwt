@@ -2,6 +2,8 @@
 ## scope = any
 alias[trigger:set_temp_variable] = {
     ## cardinality = 1..2
+    value_set[variable] = value[variable]
+    ## cardinality = 1..2
     value_set[variable] = union[variables_union]
 	## cardinality = 1..2
 	value_set[variable] = single_alias_right[math_expression]

@@ -137,6 +137,22 @@ links = {
         from_data = yes
         data_source = enum[scope_faction]
     }
+
+    mtth = {
+        prefix = mtth:
+        input_scopes = mtth
+        output_scope = mtth
+        from_data = yes
+        data_source = <mtth>
+    }
+
+    collection = {
+        prefix = collection:
+        input_scopes = collection
+        output_scope = collection
+        from_data = yes
+        data_source = <collection>
+    }
 }
 
 enums = {
