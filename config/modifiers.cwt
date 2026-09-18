@@ -2321,6 +2321,9 @@ enums = {
 		military_industrial_organization_funds_gain
 		military_industrial_organization_policy_cost
 		military_industrial_organization_policy_cooldown
+        land_mastery_gain_factor
+        operation_boost_resistance_outcome
+        operation_make_resistance_contacts_outcome
 	}
 	enum[leader_modifiers_enum] = {
 		amphibious_invasion

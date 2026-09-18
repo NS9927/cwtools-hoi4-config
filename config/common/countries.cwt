@@ -69,3 +69,11 @@ enums = {
         }
     }
 }
+
+
+unions = {
+    union[country_tags_and_scope] = {
+        enum[country_tags]
+        scope_field
+    }
+}
