@@ -469,7 +469,7 @@ alias[effect:create_country_leader] = {
 
 ### Print message to game.log - Can be localized.
 ## scope = any
-alias[effect:log] = localisation
+alias[effect:log] = scalar
 
 #"name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
 alias[effect:create_unit] = {

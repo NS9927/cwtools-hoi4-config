@@ -389,6 +389,9 @@ focus_tree = {
 	### See vanilla GER for examples
 	## cardinality = 0..1
 	alternate_icon_set = localisation
+
+    ## cardinality = 0..inf
+    focus = scalar
 }
 
 ## replace_scope = { root = country this = country }
