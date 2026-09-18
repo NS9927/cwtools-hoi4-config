@@ -1248,6 +1248,9 @@ values = {
 	}
 }
 
+# NOTE chronicle 3.0.2+ `single_alias_right[x]` in union declarations are not supported atm
+# https://github.com/DragonKnightOfBreeze/Paradox-Language-Support/issues/400
+
 unions = {
     union[variables_union] = {
         single_alias_right[math_expression]
