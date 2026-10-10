@@ -116,8 +116,6 @@ sprite = {
 	subtype[normal] = {
 		## file_extensions = { png dds tga }
 		textureFile = filepath
-		clicksound = <soundeffect>
-		clicksound = click
 	}
 	subtype[frame_animated_sprite] = {
 		## file_extensions = { png dds tga }
