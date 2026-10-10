@@ -57,7 +57,7 @@ idea = {
         alias_name[trigger] = alias_match_left[trigger]
     }
     ## cardinality = 0..1
-    picture = scalar #TODO 后面支持如 $|<sprite> -> GFX_idea_$ 类似前缀时更改
+    picture = <sprite>|GFX_idea_$
     ## cardinality = 0..1
     cost = int
     ## cardinality = 0..1

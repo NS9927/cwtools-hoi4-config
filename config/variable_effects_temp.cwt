@@ -31,6 +31,7 @@ single_alias[set_var_and_value_clause] = {
 	tooltip = localisation
 }
 single_alias[var_and_value_clause] = {
+    ## cardinality = 0..1
 	var = value[variable]
     value[variable] = variable_field
     value[variable] = single_alias_right[math_expression]
