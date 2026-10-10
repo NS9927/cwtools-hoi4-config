@@ -61,7 +61,7 @@ scripted_gui = {
 	## cardinality = 0..1
 	### Define any scripted gui as the parent gui. This is more performant than using something like parent_window_token/parent_window_name for nested GUIs.
 	parent_scripted_gui = <scripted_gui>
-	
+
 	## cardinality = 0..1
 	### Any GUI container name. Use only if parent_window_token doesn't have a corresponding token.
 	parent_window_name = <containerWindowType>
@@ -83,11 +83,11 @@ scripted_gui = {
 			### Should return name of the texture in gfx file.
 			image = localisation_inline
 			## cardinality = 0..1
-			frame = variable_field
+			frame = value[variable]
 			## cardinality = 0..1
-			x = variable_field
+			x = value[variable]
 			## cardinality = 0..1
-			y = variable_field
+			y = value[variable]
 		}
 	}
 
@@ -96,7 +96,7 @@ scripted_gui = {
 		## cardinality = ~1..inf
 		value[gridBoxType_element_name] = {
 			### The array that will be used for populating the grid.
-			array = variable_field
+			array = value[variable]
 			## cardinality = 0..1
 			### Since our array contains scope objects (countries) we can set change_scope to yes, which will chance current scope to array element while displaying the lists.
 			# This will mess up scopes, as CWTools cannot determine what sort of scope will be in an array.
@@ -238,10 +238,22 @@ scripted_gui = {
 		triggers = {
 			## cardinality = ~1..inf
 			## replace_scope = { root = country this = country }
-			scalar = {
+            union[guiType]_visible = {
 				## cardinality = ~1..inf
 				alias_name[trigger] = alias_match_left[trigger]
 			}
+            ## cardinality = ~1..inf
+            ## replace_scope = { root = country this = country }
+            union[guiType]_click_enabled = {
+                ## cardinality = ~1..inf
+                alias_name[trigger] = alias_match_left[trigger]
+            }
+            ## cardinality = ~1..inf
+            ## replace_scope = { root = country this = country }
+            union[guiType]_enum[modifiers]_click_enabled = {
+                ## cardinality = ~1..inf
+                alias_name[trigger] = alias_match_left[trigger]
+            }
 		}
 	}
 
@@ -569,7 +581,7 @@ enums = {
 		diplomacy_tab #(this one is a bit special, it only shows when no country is selected and country list is visible)
 
 		politics_tab #(window that pops up when you click on your flag)
-		
+
 		army_ledger
 		navy_ledger
 		civilian_ledger
