@@ -78,7 +78,7 @@ scripted_gui = {
 	## cardinality = 0..1
 	properties = {
 		## cardinality = ~1..inf
-		value[gui_element_name] = {
+        union[guiType] = {
 			## cardinality = 0..1
 			### Should return name of the texture in gfx file.
 			image = localisation_inline
@@ -236,22 +236,22 @@ scripted_gui = {
 
 		## cardinality = 0..1
 		triggers = {
-			## cardinality = ~1..inf
+			## cardinality = 0..inf
 			## replace_scope = { root = country this = country }
             union[guiType]_visible = {
-				## cardinality = ~1..inf
+				## cardinality = 1..inf
 				alias_name[trigger] = alias_match_left[trigger]
 			}
-            ## cardinality = ~1..inf
+            ## cardinality = 0..inf
             ## replace_scope = { root = country this = country }
             union[guiType]_click_enabled = {
-                ## cardinality = ~1..inf
+                ## cardinality = 1..inf
                 alias_name[trigger] = alias_match_left[trigger]
             }
-            ## cardinality = ~1..inf
+            ## cardinality = 0..inf
             ## replace_scope = { root = country this = country }
             union[guiType]_enum[modifiers]_click_enabled = {
-                ## cardinality = ~1..inf
+                ## cardinality = 1..inf
                 alias_name[trigger] = alias_match_left[trigger]
             }
 		}

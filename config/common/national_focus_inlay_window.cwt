@@ -21,7 +21,7 @@ focus_inlay_window = {
 	scripted_images = {
 		### Name of the icon (must be a subcomponent of "gui_component_name") or button
 		## cardinality = ~1..inf
-		value[gui_element_name] = {
+        union[guiType] = {
             ### List of possible gfx:es for the icon, first that evaluates to true is selected (each update)
             ### Each entry consists of a gfx_name (the gfx that will be used if the trigger is true); and a trigger or "yes"
             ### If a trigger is provided, then it will be evaluated with the country scope of the focus tree.
@@ -54,7 +54,7 @@ focus_inlay_window = {
 	scripted_progressbars = {
 		### Name of the progressbar (must be a subcomponent of "gui_component_name" or a button)
 		## cardinality = ~1..inf
-		value[gui_element_name] = {
+        union[guiType] = {
 			progress = value[variable]
 			progress = variable_field
 		}
@@ -64,7 +64,7 @@ focus_inlay_window = {
 	## cardinality = 0..1
 	scripted_buttons = { # List of scriptable buttons
 		## cardinality = ~1..inf
-		value[gui_element_name] = { # Name of a button. The same name can be defined in scripted_images to select gfx. If the name does not exist in scripted_iamges, it will use the default gfx set in the .gui file
+        union[guiType] = { # Name of a button. The same name can be defined in scripted_images to select gfx. If the name does not exist in scripted_iamges, it will use the default gfx set in the .gui file
 			### Trigger effect if the button should be clickable or not
 			## replace_scope = { this = country root = country }
 			## cardinality = 0..1
@@ -77,7 +77,7 @@ focus_inlay_window = {
 			## cardinality = 0..1
 			click_effect = {
 				## cardinality = ~1..inf
-				alias_name[effect] = alias_match_left[effect]				
+				alias_name[effect] = alias_match_left[effect]
 			}
 		}
 	}
